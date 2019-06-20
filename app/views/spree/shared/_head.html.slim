@@ -1,0 +1,21 @@
+meta[charset="utf-8"]
+title
+  = title
+meta[content="text/html; charset=UTF-8" http-equiv="Content-Type"]
+meta[content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport"]
+== meta_data_tags
+= canonical_tag(current_store.url)
+= favicon_link_tag 'favicon.ico'
+link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700&amp;subset=cyrillic" rel="stylesheet"
+link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700&amp;subset=cyrillic" rel="stylesheet"
+/= stylesheet_link_tag 'spree/frontend/all', media: 'screen'
+= stylesheet_link_tag 'application', media: 'screen'
+= stylesheet_link_tag 'ionicons.css', media: 'all'
+= csrf_meta_tags
+= render 'spree/shared/paths'
+= javascript_include_tag 'spree/frontend/all'
+= javascript_include_tag 'application'
+= yield :styles
+= yield :scripts
+= yield :head
+= render 'spree/shared/translations'

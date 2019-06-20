@@ -1,0 +1,62 @@
+=console
+.sticky-top.nav-top
+  nav.navbar.navbar-expand.navbar-light.bg-light.navbar-header
+    .container.justify-content-between
+      = link_to spree.root_path, class: 'navbar-brand'
+        = image_tag "logo.png"
+      .navbar-form.d-none.d-md-block
+        .search
+          input.form-control type="search" /
+          .search-icon
+      div
+        ul.navbar-nav
+          li.nav-item
+            a.nav-link.nav-link-icon href="#"
+              i.icon-flag-ru
+          li.nav-item
+            a.nav-link.nav-link-icon href="#"
+              i.icon-heart
+          li.nav-item
+            a.nav-link.nav-link-icon href="#"
+              i.icon-account
+          li.nav-item
+            a.nav-link.nav-link-icon href="#"
+              i.icon-cart
+  nav.navbar.navbar-expand-lg.bg-white.navbar-light.navbar-menu
+    .container
+      button.navbar-toggler.ml-auto aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav
+          /- @taxonomies.each do |taxonomy|
+          li.nav-item
+            a.nav-link href="#"  Икра
+          li.nav-item
+            a.nav-link href="#"  Матрешки
+          li.nav-item
+            a.nav-link href="#"  Сладости
+          li.nav-item
+            a.nav-link href="#"  Сувениры
+          li.nav-item
+            a.nav-link href="#"  Армия
+          li.nav-item
+            a.nav-link href="#"  Часы
+          li.nav-item
+            a.nav-link href="#"  Камни
+          li.nav-item
+            a.nav-link href="#"  Украшения
+          li.nav-item
+            a.nav-link href="#"  Игрушки
+          li.nav-item
+            a.nav-link href="#"  Здоровое питание
+          li.nav-item
+            a.nav-link href="#"  Косметика
+/#spree-header
+  header#header[data-hook]
+    .container
+      .row
+        figure#logo.col-md-4.col-sm-3[data-hook]
+          = logo
+        = render partial: 'spree/shared/nav_bar'
+  .container
+    = render partial: 'spree/shared/main_nav_bar'

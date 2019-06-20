@@ -1,0 +1,16 @@
+- promotions = @product.possible_promotions
+- if promotions.any?
+  #promotions
+    h3
+      = Spree.t(:promotions)
+    - promotions.each do |promotion|
+      .well.well-sm
+        h4
+          = promotion.name
+        p
+          = promotion.description
+        - if promotion.products.any?
+          ul
+            - promotion.products.each do |product|
+              li
+                = link_to product.name, product_path(product)

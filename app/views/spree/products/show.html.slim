@@ -1,0 +1,73 @@
+- @body_id = 'product-details'
+= content_for :styles
+  = stylesheet_link_tag 'blueimp-gallery/gallery.css', media: 'all'
+  = stylesheet_link_tag 'blueimp-gallery/gallery-indicator.css', media: 'all'
+  = stylesheet_link_tag 'blueimp-gallery/gallery-video.css', media: 'all'
+= content_for :scripts
+  = javascript_include_tag 'blueimp-gallery/gallery.js'
+  = javascript_include_tag 'blueimp-gallery/gallery-fullscreen.js'
+  = javascript_include_tag 'blueimp-gallery/gallery-indicator.js'
+  = javascript_include_tag 'blueimp-gallery/gallery-video.js'
+  = javascript_include_tag 'blueimp-gallery/gallery-vimeo.js'
+  = javascript_include_tag 'blueimp-gallery/gallery-youtube.js'
+- cache cache_key_for_product do
+  .container
+    h1 = @product.name
+    = custom_breadcrumbs(@taxon)
+    .row.mt-5.pb-3.product[data-hook="product_show" itemscope itemtype="https://schema.org/Product"]
+      .col-md-6.text-center
+        /! Lightbox template
+        #shop-preview-lightbox.blueimp-gallery.blueimp-gallery-controls
+          .slides
+          h3.title
+          a.prev ‹
+          a.next ›
+          a.close ×
+          a.play-pause
+        /! Preview
+        a#shop-preview-image.img-thumbnail.ui-bordered.mb-4 href="#"
+          span.product__badge-wrapper
+            .product__badge.red
+              span скидка
+            .product__badge.green
+              span новинка
+            .product__badge.white
+              span hand made
+          span.img-thumbnail-overlay.bg-white.opacity-75
+          span.img-thumbnail-content.text-primary.text-xlarge
+            i.ion.ion-ios-search
+          = large_image(@product, itemprop: "image", class: "img-fluid")
+          /img.img-fluid alt="" src="img/ikra-large.png"
+        = render partial: 'thumbnails'
+      .col-md-6
+        .product__price = display_price(@product)
+
+
+
+
+
+
+    .row
+      .col-md-4.col-sm-5[data-hook="product_left_part"]
+        div[data-hook="product_left_part_wrap"]
+          #product-images[data-hook="product_images"]
+            #main-image.panel.panel-default[data-hook]
+              .panel-body.text-center
+                = product_image(@product, itemprop: "image")
+            #thumbnails[data-hook]
+              = render partial: 'thumbnails'
+          div[data-hook="product_properties"]
+            = render partial: 'properties'
+          div[data-hook="promotions"]
+            = render partial: 'promotions'
+      .col-md-8.col-sm-7[data-hook="product_right_part"]
+        div[data-hook="product_right_part_wrap"]
+          #product-description[data-hook="product_description"]
+            h1.product-title[itemprop="name"]
+              = @product.name
+            .well[itemprop="description" data-hook="description"]
+              = product_description(@product)
+            #cart-form[data-hook="cart_form"]
+              = render partial: 'cart_form'
+          #taxon-crumbs.five[data-hook="product_taxons"]
+            = render partial: 'taxons'

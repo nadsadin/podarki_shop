@@ -1,0 +1,36 @@
+@import "mixins";
+.login-wrapper{
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  //justify-content: center;
+}
+.login-form{
+  text-align: center;
+  width: 500px;
+  max-width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 50px;
+  background-color: #fff;
+  &__title{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 39px;
+    text-align: center;
+    letter-spacing: -0.5px;
+    color: #212121;
+  }
+  .text-field-container{
+    margin: 40px auto;
+    width: 330px;
+    max-width: 100%;
+    .mdc-text-field{
+      width: 100%;
+    }
+  }
+}

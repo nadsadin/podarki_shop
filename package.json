@@ -1,0 +1,32 @@
+{
+  "name": "podarki_shop",
+  "private": true,
+  "dependencies": {
+    "@claviska/jquery-minicolors": "~2.2.6",
+    "animate.css": "~3.6.1",
+    "blueimp-gallery": "~2.33.0",
+    "bootstrap": "~4.1.1",
+    "bootstrap-duallistbox": "~3.0.6",
+    "bootstrap-markdown": "~2.10.0",
+    "bootstrap-multiselect": "~0.9.13-1",
+    "bootstrap-select": "~1.13.1",
+    "bootstrap-slider": "~10.0.0",
+    "bootstrap-sortable": "git+https://github.com/drvic10k/bootstrap-sortable.git",
+    "bootstrap-table": "~1.12.1",
+    "bootstrap-tour": "git+https://github.com/sorich87/bootstrap-tour.git#master",
+    "cropper": "~4.0.0-beta",
+    "datatables.net-bs4": "~1.10.16",
+    "dragula": "~3.7.2",
+    "jquery.growl": "~1.3.5",
+    "jstree": "~3.3.5",
+    "ladda": "~2.0.0",
+    "perfect-scrollbar": "~1.4.0",
+    "photoswipe": "~4.1.2",
+    "plyr": "~2.0.18",
+    "select2": "~4.0.6-rc.1",
+    "spinkit": "~1.2.5",
+    "swiper": "~4.3.3",
+    "toastr": "~2.1.4",
+    "vegas": "~2.4.0"
+  }
+}

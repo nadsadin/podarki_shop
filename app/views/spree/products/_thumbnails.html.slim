@@ -1,0 +1,32 @@
+- # no need for thumbnails unless there is more than one image
+- if (@product.images + @product.variant_images).uniq.size > 1
+  /! Preview slider
+  .position-relative.px-4.mx-auto style=("max-width: 200px;")
+    #shop-preview-slider-next.swiper-button-next.custom-icon.text-big.mr--3
+      i.ion.ion-ios-arrow-forward.text-muted
+    #shop-preview-slider-prev.swiper-button-prev.custom-icon.text-big.ml--3
+      i.ion.ion-ios-arrow-back.text-muted
+    #shop-preview-slider.swiper-container
+      .swiper-wrapper
+        - @product.images.each do |i|
+          a.swiper-slide.d-block.border-primary.ui-bordered href="#"
+            = image_tag(main_app.url_for(i.url(:large)), class: "img-fluid", alt: set_image_alt(i, :large))
+        - if @product.has_variants?
+          - @product.variant_images.each do |i|
+            - next if @product.images.include?(i)
+              a.swiper-slide.d-block.border-primary.ui-bordered href="#"
+                = image_tag(main_app.url_for(i.url(:large)), class: "img-fluid", alt: set_image_alt(i, :large))
+
+
+/
+  ul#product-thumbnails.thumbnails.list-inline[data-hook]
+    - @product.images.each do |i|
+      li.tmb-all class="tmb-#{i.viewable.id}"
+        - img_tag = image_tag(main_app.url_for(i.url(:mini)), class: "thumbnail", alt: set_image_alt(i, :mini))
+        = link_to(img_tag, main_app.url_for(i.url(:product)))
+    - if @product.has_variants?
+      - @product.variant_images.each do |i|
+        - next if @product.images.include?(i)
+        li.vtmb class="tmb-#{i.viewable.id}"
+          - img_tag = image_tag(main_app.url_for(i.url(:mini)), class: "thumbnail", alt: set_image_alt(i, :mini))
+          = link_to(img_tag, main_app.url_for(i.url(:product)))

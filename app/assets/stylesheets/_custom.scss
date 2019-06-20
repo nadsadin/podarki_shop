@@ -1,0 +1,67 @@
+@import "mixins";
+$primary-color: #E84F3C;
+
+.text-muted{
+  color: #A3A3A3;
+}
+.btn-primary{
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: #fff;
+  @include hover-active{
+    background-color: darken($primary-color, 15%);
+    border-color: darken($primary-color, 15%);
+  }
+}
+.btn-default{
+  background: #DDDDDD;
+  color: #fff;
+}
+.btn-white{
+  background-color: #fff;
+  border-color: #fff;
+  color: #212121;
+  @include hover-active{
+    background-color: darken(#fff, 5%);
+    border-color: darken(#fff, 5%);
+  }
+}
+.btn-w220{
+  min-width: 220px;
+}
+.btn-rounded{
+  border-radius: 20px;
+}
+.h1, h1{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 29px;
+  color: #212121;
+  margin-top: 45px;
+  margin-bottom: 10px;
+}
+.h2, h2{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 29px;
+}
+.bg-primary{
+  background-color: $primary-color!important;
+  color: #fff;
+}
+.border-primary{
+  border-color: $primary-color!important;
+}
+.text-primary{
+  color: $primary-color!important;
+}
+
+@media (min-width: 1200px){
+  .container {
+    max-width: 960px;
+  }
+}

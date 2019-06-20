@@ -1,0 +1,10 @@
+@mixin hover-active{
+  &:hover, &:focus, &:active, &.active{
+    @content
+  }
+  &:not(:disabled):not(.disabled){
+    &:hover, &:focus, &:active, &.active{
+      @content
+    }
+  }
+}

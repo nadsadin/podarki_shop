@@ -1,0 +1,77 @@
+- content_for :page_actions do
+  = button_link_to Spree.t(:back_to_resource_list, resource: plural_resource_name(Spree::Page)), spree.admin_pages_path, icon: 'arrow-left', class: 'btn-primary'
+= form_for [:admin, resource] do |f|
+  .row[data-hook="admin_page_form_fields"]
+    .col-md-12[data-hook="admin_page_form_left"]
+      .form-group
+        = f.label :title
+        span.required
+          | *
+        = f.text_field :title, class: 'form-control'
+        = f.error_message_on :title
+      .form-group
+        = f.label :slug
+        span.required
+          | *
+        = f.text_field :slug, class: 'form-control'
+        = f.error_message_on :slug
+      .form-group
+        = f.label :body
+        span.required
+          | *
+        = f.text_area :body, rows: 12, class: 'form-control'
+        = f.error_message_on :body
+    .col-md-12[data-hook="admin_page_form_right"]
+      .form-group
+        = f.label :layout
+        = f.text_field :layout, class: 'form-control'
+      .form-group
+        = f.label :foreign_link
+        = f.text_field :foreign_link, class: 'form-control'
+      .form-group
+        = f.label :position
+        = f.number_field :position, min: 0, class: 'form-control'
+      .checkbox
+        = f.label :show_in_sidebar do
+          = f.check_box :show_in_sidebar
+          = Spree::Page.human_attribute_name(:show_in_sidebar)
+      .checkbox
+        = f.label :show_in_header do
+          = f.check_box :show_in_header
+          = Spree::Page.human_attribute_name(:show_in_header)
+      .checkbox
+        = f.label :show_in_footer do
+          = f.check_box :show_in_footer
+          = Spree::Page.human_attribute_name(:show_in_footer)
+      .checkbox
+        = f.label :visible do
+          = f.check_box :visible
+          = Spree::Page.human_attribute_name(:visible)
+      .checkbox
+        = f.label :render_layout_as_partial do
+          = f.check_box :render_layout_as_partial
+          = Spree::Page.human_attribute_name(:render_layout_as_partial)
+      .form-group
+        = f.label :stores, plural_resource_name(Spree::Store)
+        - Spree::Store.all.each do |store|
+          .checkbox
+            = f.label store.name.downcase.to_sym do
+              = check_box_tag 'page[store_ids][]', store.id, @page.stores.include?(store)
+              = store.name
+  .row[data-hook="admin_page_form_meta"]
+    .col-md-12
+      .form-group
+        = f.label :meta_title
+        = f.text_field :meta_title, class: 'form-control'
+        = f.error_message_on :meta_title
+      .form-group
+        = f.label :meta_keywords
+        = f.text_field :meta_keywords, class: 'form-control'
+        = f.error_message_on :meta_keywords
+      .form-group
+        = f.label :meta_description
+        = f.text_field :meta_description, class: 'form-control'
+        = f.error_message_on :meta_description
+  .row[data-hook="admin_page_form_additional_fields"]
+    .col-md-12
+  = render "spree/admin/shared/#{resource.new_record? ? 'new' : 'edit'}_resource_links"

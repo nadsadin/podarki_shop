@@ -1,0 +1,547 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "mixins";
+@import "custom";
+@import "ecommerce";
+@import "swiper";
+@import "login";
+html, body{
+  height: 100%;
+}
+body{
+  font-family: Roboto;
+  color: #212121;
+  .navbar-header{
+    padding-top: 0;
+    padding-bottom: 0;
+    .navbar-brand{
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .search{
+      position: relative;
+      input{
+        border-radius: 38px;
+        padding-left: 20px;
+        padding-right: 36px;
+      }
+      &-icon{
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        right: 14px;
+        top: 10px;
+        background-image: image_url("search.png");
+      }
+    }
+    .navbar-nav{
+      -ms-flex-direction: row;
+      flex-direction: row;
+    }
+    & [class^="icon"]{
+      width: 20px;
+      height: 20px;
+    }
+    .nav-link-icon{
+      border-radius: 36px;
+      margin-left: 4px;
+      margin-right: 4px;
+      @include hover-active {
+        background-color: #EDEDED;
+      }
+    }
+  }
+  .navbar-menu{
+    height: 75px;
+  }
+  .nav-top{
+    box-shadow: 0px 0px 20px rgba(162, 162, 162, 0.25);
+  }
+  [class^="icon"]{
+    display: block;
+    background-size: contain;
+  }
+  .icon-flag-ru{
+    background-image: image_url("ru.png");
+  }
+  .icon-account{
+    background-image: image_url("account.svg");
+  }
+  .icon-cart{
+    background-image: image_url("cart.svg");
+  }
+  .icon-heart{
+    background-image: image_url("heart.svg");
+  }
+  .navbar-menu{
+    .navbar-nav{
+      .nav-link{
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: -0.01em;
+        color: #212121;
+        @include hover-active{
+          color: $primary-color;
+        }
+      }
+    }
+  }
+  .layout-wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  .layout-content{
+    flex: 1 0 auto;
+  }
+  .layout-footer{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex: 0 0 auto;
+    .small{
+      font-size: 9px;
+    }
+  }
+  .footer-nav{
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    text-align: center;
+    .nav-item{
+      display: inline-block;
+    }
+    .nav-link{
+      font-weight: bold;
+      font-size: 14px;
+      color: #757575;
+      padding: .5rem .3rem;
+      @include hover-active{
+        color: $primary-color;
+        text-decoration: none;
+      }
+    }
+  }
+  .footer-links{
+    text-align: center;
+    padding: 1rem 0;
+    .footer-link{
+      display: inline-block;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 18px;
+      color: #757575;
+      padding: 0.5rem 0.3rem;
+      @include hover-active{
+        color: $primary-color;
+        text-decoration: none;
+      }
+    }
+  }
+  .error-wrapper{
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    .error-header{
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 60px;
+      line-height: 66px;
+      text-align: center;
+      letter-spacing: -0.5px;
+
+      color: #212121;
+    }
+    .error-description{
+      padding-bottom: 50px;
+      max-width: 500px;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 39px;
+      text-align: center;
+      letter-spacing: -0.5px;
+
+      color: #212121;
+    }
+  }
+  #main-slider .swiper{
+    &-slide{
+      min-height: 500px;
+      background-size: cover;
+      &__content{
+        text-align: center;
+        padding-bottom: 50px;
+      }
+      &__title{
+        padding-top: 140px;
+        padding-bottom: 66px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 60px;
+        line-height: 66px;
+        letter-spacing: -0.5px;
+        color: #FFFFFF;
+        @media only screen and (max-width: 767.98px){
+          font-size: 50px;
+          line-height: 55px;
+        }
+        @media only screen and (max-width: 575.98px){
+          font-size: 35px;
+          line-height: 38px;
+        }
+      }
+    }
+    &-pagination-bullet{
+      background-color: #fff;
+      opacity: 1;
+      &-active{
+        background-color: $primary-color;
+      }
+    }
+  }
+  .section-card{
+    border: 1px solid #EAEAEA;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-height: 200px;
+    height: 100%;
+    color: #212121;
+    @include hover-active{
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+      text-decoration: none;
+    }
+    &__title{
+      font-weight: 900;
+      font-size: 16px;
+      line-height: 23px;
+      text-transform: uppercase;
+    }
+    &__description{
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    &__image{
+      max-width: 150px;
+    }
+  }
+  .product-card{
+    border: 1px solid #EAEAEA;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 25px;
+    height: 100%;
+    color: #212121;
+    position: relative;
+    background-color: #fff;
+    @include hover-active{
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+      text-decoration: none;
+    }
+    &__title{
+      font-size: 14px;
+      line-height: 21px;
+      color: #000000;
+    }
+    &__price{
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 30px;
+      color: #000000;
+    }
+    &__image{
+      max-width: 150px;
+      &-wrapper{
+        text-align: center;
+      }
+    }
+    .small{
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .text-muted{
+      color: #929292;
+    }
+    &__old-price{
+      text-decoration-line: line-through;
+      color: $primary-color;
+    }
+    &__rating{
+      color: #fff;
+      width: 24px;
+      height: 24px;
+      border-radius: 24px;
+      font-weight: bold;
+      font-size: 11px;
+      line-height: 24px;
+      text-align: center;
+      margin-right: 5px;
+      &.excellent{
+        background-color: #4FDA55;
+      }
+      &.good{
+        background-color: #BEDA4F;
+      }
+      &.medium{
+        background-color: #FCE51A;
+      }
+      &-wrapper{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+      }
+    }
+    &__badge{
+      display: inline-block;
+      margin-right: -8px;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      font-weight: 900;
+      font-size: 7px;
+      line-height: 40px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      &.red{
+        background-color: $primary-color;
+      }
+      &.green{
+        background-color: #75D828;
+      }
+      &-wrapper{
+        position: absolute;
+        top: 20px;
+        left: 30px;
+      }
+    }
+  }
+  .breadcrumb{
+    background-color: inherit;
+    padding: 0;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 12px;
+    color: #757575;
+    a{
+      color: #757575;
+      @include hover-active{
+        color: $primary-color;
+        text-decoration: none;
+      }
+    }
+  }
+  .section{
+    &-sort{
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 18px;
+      text-align: right;
+      a, span{
+        display: inline-block;
+        padding: 0.1rem;
+        color: #757575;
+      }
+      a{
+        @include hover-active{
+          color: #212121;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .text-content{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    padding-bottom: 50px;
+    p{
+      margin: 27px 0;
+    }
+  }
+  .product{
+
+    &__badge{
+      display: flex;
+      margin-right: 5px;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      font-weight: 900;
+      font-size: 7px;
+      //line-height: 40px;
+      text-transform: uppercase;
+      color: #fff;
+      justify-content: center;
+      align-items: center;
+      &.red{
+        background-color: $primary-color;
+      }
+      &.green{
+        background-color: #75D828;
+      }
+      &.white{
+        background-color: #fff;
+        color: #212121;
+        border: 1px solid #212121;
+      }
+      &-wrapper{
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        display: flex;
+        flex-direction: row;
+      }
+    }
+    &__price{
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 49px;
+      color: #000000;
+    }
+
+    &__rating{
+      color: #fff;
+      width: 24px;
+      height: 24px;
+      border-radius: 24px;
+      font-weight: bold;
+      font-size: 11px;
+      line-height: 24px;
+      text-align: center;
+      margin-right: 5px;
+      &.excellent{
+        background-color: #4FDA55;
+      }
+      &.good{
+        background-color: #BEDA4F;
+      }
+      &.medium{
+        background-color: #FCE51A;
+      }
+      &-wrapper{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+      }
+    }
+    &__description{
+      background: #F8F8F8;
+      padding-right: 30px;
+      padding-left: 30px;
+      .nav-tabs{
+        border: none;
+        .nav-link{
+          border: none;
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 22px;
+          line-height: 24px;
+          text-align: center;
+          color: #BCBCBC;
+          @include hover-active{
+            color: #212121;
+            background-color: transparent;
+          }
+        }
+      }
+      .columns{
+        -webkit-columns: 300px 2;
+        -moz-columns: 300px 2;
+        columns: 300px 2;
+        -webkit-column-gap: 60px;
+        -moz-column-gap: 60px;
+        column-gap: 60px;
+      }
+    }
+  }
+  .ui-product-color.active {
+    -webkit-box-shadow: 0 0 0 2px #fff,0 0 0 4px $primary-color !important;
+    box-shadow: 0 0 0 2px #fff,0 0 0 4px $primary-color !important;
+  }
+  .btn-default.md-btn-flat {
+    background: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    color: #4E5155 !important;
+    @include hover-active{
+      background: rgba(78,81,85,0.15) !important;
+    }
+  }
+  .icon-btn.btn-sm {
+    width: calc(1.8125rem + 2px) !important;
+    line-height: 1.56563rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: .25em .417em;
+    font-size: .858em;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .125rem;
+  }
+  .badge-outline-primary {
+    background-color: transparent;
+    -webkit-box-shadow: 0 0 0 1px $primary-color inset;
+    box-shadow: 0 0 0 1px $primary-color inset;
+    color: $primary-color;
+    @include hover-active{
+      text-decoration: none;
+    }
+  }
+  .badge-outline-default{
+    background: #DDDDDD;
+    color: #fff;
+    @include hover-active{
+      text-decoration: none;
+    }
+  }
+  @media only screen and (max-width: 575.98px) {
+    .navbar-header {
+      .navbar-brand {
+        margin-right: 0;
+        img{
+          height: 56px;
+        }
+      }
+      .nav-link-icon{
+        margin: 0;
+        padding: 4px!important;
+      }
+    }
+  }
+}

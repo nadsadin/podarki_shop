@@ -77,6 +77,8 @@ group :development do
 
   # Remove the following if your server does not use RVM
   gem 'capistrano-rvm'
+
+  gem 'capistrano-yarn', git: 'https://github.com/OurHealth/capistrano-yarn.git'
 end
 
 group :test do

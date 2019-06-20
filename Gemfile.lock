@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/OurHealth/capistrano-yarn.git
+  revision: 0baf81d6f4ed39f441febd860bd36dc56e1da15b
+  specs:
+    capistrano-yarn (1.0.2)
+      capistrano (>= 3.0.0)
+
+GIT
   remote: https://github.com/spree-contrib/spree_editor.git
   revision: aa7f8b6474b6fd4dbad516f115e2b1cac65c33cb
   specs:
@@ -507,6 +514,7 @@ DEPENDENCIES
   capistrano-passenger (>= 0.1.1)
   capistrano-rails
   capistrano-rvm
+  capistrano-yarn!
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)

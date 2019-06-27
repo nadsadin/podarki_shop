@@ -28,7 +28,7 @@
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav
-          /- @taxonomies.each do |taxonomy|
+          - Spree::Taxon.roots.each do |taxon|
           li.nav-item
             a.nav-link href="#"  Икра
           li.nav-item

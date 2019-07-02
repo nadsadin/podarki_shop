@@ -37,17 +37,72 @@
           span.img-thumbnail-content.text-primary.text-xlarge
             i.ion.ion-ios-search
           = large_image(@product, itemprop: "image", class: "img-fluid")
-          /img.img-fluid alt="" src="img/ikra-large.png"
         = render partial: 'thumbnails'
       .col-md-6
         .product__price = display_price(@product)
+        .product__rating-wrapper.my-2
+          .product__rating.good 4,0
+          .small.text-muted Отзывов: 12
+        table.table.my-4
+          tbody
+            tr
+              /! Set width of the first column
+              td.border-0.text-muted.small.pl-0 style=("width: 110px")  Цвет:
+              td.border-0
+                a.ui-product-color.active href="#" style="background:#000;"
+                a.ui-product-color href="#" style="background:#5f9ea0;"
+                a.ui-product-color href="#" style="background:#c5baab;"
+            tr
+              td.border-0.text-muted.small.pl-0 Параметр 1:
+              td.border-0.text-big
+                a.badge.badge-outline-primary.font-weight-normal.py-1 href="#" Параметр 1
+                a.badge.badge-outline-default.font-weight-normal.py-1 href="#"  Параметр 2
+            tr
+              td.border-0.text-muted.small.pl-0 Параметр 2
+              td.border-0.text-big
+                a.badge.badge-outline-primary.font-weight-normal.py-1 href="#"  Параметр 1
+            tr
+              td.border-0.text-muted.small.pl-0 Доставка:
+              td.border-0.small
+                | из Российская Федерация
+            tr
+              td.border-0.text-muted.small.pl-0 Количество:
+              td.border-0
+                .input-group.input-group-sm style=("width: 120px")
+                  span.input-group-prepend
+                    button.btn.btn-default.btn-sm.icon-btn.md-btn-flat.px-0 type="button"  -
+                  input.form-control.text-center type="text" value="1"
+                  span.input-group-append
+                    button.btn.btn-default.btn-sm.icon-btn.md-btn-flat.px-0 type="button"  +
+            tr
+              td.border-0.text-muted.small.pl-0 Оплата:
+              td.border-0
+                = image_tag 'Visa-light.png', class: 'ui-payment-small'
+                = image_tag 'MasterCard-light.png', class: 'ui-payment-small'
+                = image_tag 'Maestro-light.png', class: 'ui-payment-small'
+        .product__buttons
+          a.btn.btn-primary.btn-rounded href="#"  Добавить в корзину
+          a.btn.btn-default.btn-rounded.ml-md-2 href="#"  Купить в 1 клик
 
 
 
 
 
 
-    .row
+    .product__description.mt-5.py-4
+      nav
+        #nav-tab.nav.nav-tabs.justify-content-center role="tablist"
+          a#nav-description-tab.nav-item.nav-link.active data-toggle="tab" href="#nav-description" role="tab" aria-controls="nav-description" aria-selected="true" Описание
+          a#nav-delivery-tab.nav-item.nav-link data-toggle="tab" href="#nav-delivery" role="tab" aria-controls="nav-delivery" aria-selected="false" Доставка
+          a#nav-reviews-tab.nav-item.nav-link data-toggle="tab" href="#nav-reviews" role="tab" aria-controls="nav-reviews" aria-selected="false" Отзывы (23)
+      #nav-tabContent.tab-content.mt-5
+        #nav-description.tab-pane.fade.show.active
+          = product_description(@product)
+        #nav-delivery.tab-pane.fade
+          = product_description(@product)
+        #nav-reviews.tab-pane.fade
+          = product_description(@product)
+    /.row
       .col-md-4.col-sm-5[data-hook="product_left_part"]
         div[data-hook="product_left_part_wrap"]
           #product-images[data-hook="product_images"]

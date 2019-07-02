@@ -1,0 +1,19 @@
+- unless request.path == spree.login_path
+  .layout-footer
+    .container
+      ul.footer-nav
+        - Spree::Taxon.roots.each do |taxon|
+          li.nav-item
+            = link_to(taxon.name, seo_url(taxon), class: 'nav-link')
+      .footer-links
+        a.footer-link href="#" Личный кабинет
+        a.footer-link href="#" Корзина
+        a.footer-link href="#" Избранное
+        a.footer-link href="#" Контакты
+        a.footer-link href="#" Доставка
+        a.footer-link href="#" Оплата
+      .text-center.text-muted.small
+        | © kitchai.ru,
+        =< Date.current.strftime("%Y")
+      .text-center.text-muted.small
+        | Дизайн и поддержка сайта - Агентство ADS

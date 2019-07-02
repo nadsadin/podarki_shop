@@ -5,7 +5,7 @@
     "@claviska/jquery-minicolors": "~2.2.6",
     "animate.css": "~3.6.1",
     "blueimp-gallery": "~2.33.0",
-    "bootstrap": "~4.1.1",
+    "bootstrap": "^4.3.1",
     "bootstrap-duallistbox": "~3.0.6",
     "bootstrap-markdown": "~2.10.0",
     "bootstrap-multiselect": "~0.9.13-1",

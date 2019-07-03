@@ -2,6 +2,29 @@
 /- content_for :sidebar do
   div[data-hook="homepage_sidebar_navigation"]
     = render partial: 'spree/shared/taxonomies'
+#main-slider.swiper-container
+  /! Additional required wrapper
+  .swiper-wrapper
+    /! Slides
+    .swiper-slide style=("background-image: url('#{image_url('slider.png')}')")
+      .swiper-slide__content.container
+        .swiper-slide__title
+          | Распродажа деревянных игрушек из Вологды
+        a.btn.btn-rounded.btn-white.btn-w220 href="#"  Подробнее
+    .swiper-slide style=("background-image: url('#{image_url('slider.png')}')")
+      .swiper-slide__content.container
+        .swiper-slide__title
+          | Распродажа деревянных игрушек из Вологды
+        a.btn.btn-rounded.btn-white.btn-w220 href="#"  Подробнее
+    .swiper-slide style=("background-image: url('#{image_url('slider.png')}')")
+      .swiper-slide__content.container
+        .swiper-slide__title
+          | Распродажа деревянных игрушек из Вологды
+        a.btn.btn-rounded.btn-white.btn-w220 href="#"  Подробнее
+  /! If we need pagination
+  .swiper-pagination
 div.container.mt-5[data-hook="homepage_products"]
+
+  .py-4.h2.text-center = Spree.t('latest_products')
   - cache(cache_key_for_products) do
     = render partial: 'spree/shared/products', locals: { products: @products }

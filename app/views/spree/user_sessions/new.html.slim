@@ -1,0 +1,38 @@
+= content_for :styles
+  link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+= content_for :scripts
+  script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"
+- @no_content_wrapper = true
+.login-wrapper style=("background-image: url(#{image_url 'login.png'})")
+  = form_for Spree::User.new, as: :spree_user, url: spree.create_new_session_path do |f|
+    .login-form
+      .login-form__title =  Spree.t(:login)
+      .text-field-container
+        .mdc-text-field.mdc-text-field--outlined data-mdc-auto-init="MDCTextField"
+          = f.email_field :email, class: 'mdc-text-field__input'
+          /input#login.mdc-text-field__input type="text" /
+          .mdc-notched-outline
+            .mdc-notched-outline__leading
+            .mdc-notched-outline__notch
+              = f.label :email, class: 'mdc-floating-label'
+              /label.mdc-floating-label for="login"  Логин
+            .mdc-notched-outline__trailing
+        .mdc-text-field-helper-line
+          .mdc-text-field-helper-text.mdc-text-field-helper-text--persistent Логин, указанный при регистрации
+      .text-field-container
+        .mdc-text-field.mdc-text-field--outlined data-mdc-auto-init="MDCTextField"
+          = f.password_field :password, class: 'mdc-text-field__input'
+          /input#password.mdc-text-field__input type="password" /
+          .mdc-notched-outline
+            .mdc-notched-outline__leading
+            .mdc-notched-outline__notch
+              = f.label :password, class: 'mdc-floating-label'
+              /label.mdc-floating-label for="password"  Пароль
+            .mdc-notched-outline__trailing
+        .mdc-text-field-helper-line
+          .mdc-text-field-helper-text.mdc-text-field-helper-text--persistent Пароль, указанный при регистрации
+      = f.submit Spree.t(:login), class: 'btn btn-primary btn-rounded btn-w220'
+      /a.btn.btn-primary.btn-rounded.btn-w220 href="#"  Войти
+    div data-hook="login_extras"
+    script type="text/javascript"
+      |window.mdc.autoInit();

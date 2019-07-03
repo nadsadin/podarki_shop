@@ -1,4 +1,4 @@
-=console if Rails.env.development?
+/=console if Rails.env.development?
 .sticky-top.nav-top
   nav.navbar.navbar-expand.navbar-light.bg-light.navbar-header
     .container.justify-content-between
@@ -20,7 +20,7 @@
             a.nav-link.nav-link-icon href="#"
               i.icon-account
           li.nav-item
-            a.nav-link.nav-link-icon href="#"
+            = link_to spree.cart_path, class: 'nav-link nav-link-icon'
               i.icon-cart
   nav.navbar.navbar-expand-lg.bg-white.navbar-light.navbar-menu
     .container
@@ -28,29 +28,9 @@
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav
-          /- @taxonomies.each do |taxonomy|
-          li.nav-item
-            a.nav-link href="#"  Икра
-          li.nav-item
-            a.nav-link href="#"  Матрешки
-          li.nav-item
-            a.nav-link href="#"  Сладости
-          li.nav-item
-            a.nav-link href="#"  Сувениры
-          li.nav-item
-            a.nav-link href="#"  Армия
-          li.nav-item
-            a.nav-link href="#"  Часы
-          li.nav-item
-            a.nav-link href="#"  Камни
-          li.nav-item
-            a.nav-link href="#"  Украшения
-          li.nav-item
-            a.nav-link href="#"  Игрушки
-          li.nav-item
-            a.nav-link href="#"  Здоровое питание
-          li.nav-item
-            a.nav-link href="#"  Косметика
+          - Spree::Taxon.roots.each do |taxon|
+            li.nav-item
+              = link_to(taxon.name, seo_url(taxon), class: 'nav-link')
 /#spree-header
   header#header[data-hook]
     .container

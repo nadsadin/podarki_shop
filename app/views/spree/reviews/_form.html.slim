@@ -1,0 +1,28 @@
+= form_for review, url: product_reviews_path(product), html: { method: :post } do |f|
+  = render 'spree/shared/error_messages', target: review
+  .form-group
+    /= f.label :rating
+
+    .form-group
+      .ui-stars.text-muted.form-stars
+        - 5.times do |i|
+          = f.radio_button :rating, 5 - i, class: 'hidden', id: "rating_star_#{5 - i}"
+          label.ui-star for="rating_star_#{5 - i}"
+            i.ion.ion-md-star
+            i.ion.ion-md-star
+  .form-group
+    = f.label :name
+    = f.text_field :name, maxlength: 255, size: 50, class: 'form-control'
+  .form-group
+    = f.label :title
+    = f.text_field :title, maxlength: 255, size: 50, class: 'form-control'
+  .form-group
+    = f.label :review
+    = f.text_area :review, wrap: 'virtual', rows: 10, cols: 50, class: 'form-control'
+  - if Spree::Reviews::Config[:show_identifier]
+    .checkbox
+      = f.label :show_identifier do
+        = f.check_box :show_identifier, checked: true
+        = Spree::Review.human_attribute_name(:show_identifier)
+  .form-actions
+    = f.submit Spree.t(:submit_your_review), class: 'btn btn-primary'

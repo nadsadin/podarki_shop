@@ -1,0 +1,9 @@
+.product__rating-wrapper.my-2
+  div class= "product__rating #{rating_class(product.avg_rating)}"
+    = product.avg_rating
+  .small.text-muted
+    => Spree.t(:reviews_count)
+    = product.reviews_count
+div itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating"
+  span content=product.avg_rating itemprop="ratingValue"
+  span content=product.reviews_count itemprop="reviewCount"

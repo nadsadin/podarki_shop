@@ -1,0 +1,11 @@
+.container
+  .col-lg-6.offset-lg-3
+    .card.mb-3
+      .card-header
+        h3.card-title.mb-0.h6= Spree.t(:editing_user)
+      .card-body
+        = render :partial => 'spree/shared/error_messages', :locals => {:target => @user}
+        = form_for Spree::User.new, :as => @user, :url => spree.user_path(@user), :method => :put do |f|
+          = render :partial => 'spree/shared/user_form', :locals => {:f => f}
+          div
+            = f.submit Spree.t(:update), :class => 'btn btn-primary'

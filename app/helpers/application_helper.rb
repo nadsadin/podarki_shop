@@ -14,4 +14,8 @@ module ApplicationHelper
     crumb_list = content_tag(:ol, raw(crumbs.flatten.map(&:mb_chars).join), class: 'breadcrumb', itemscope: 'itemscope', itemtype: 'https://schema.org/BreadcrumbList')
     content_tag(:nav, crumb_list, id: 'breadcrumbs', aria: { label: 'breadcrumb' })
   end
+
+  def available_locales
+    SpreeI18n::Config.available_locales.map { |locale| locale.to_s.downcase }
+  end
 end

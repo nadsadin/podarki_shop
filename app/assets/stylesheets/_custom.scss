@@ -59,6 +59,15 @@ $primary-color: #E84F3C;
 .text-primary{
   color: $primary-color!important;
 }
+.dropdown-toggle.hide-arrow::before,.dropdown-toggle.hide-arrow::after,.dropdown-toggle-hide-arrow>.dropdown-toggle::before,.dropdown-toggle-hide-arrow>.dropdown-toggle::after {
+  display: none !important
+}
+.dropdown-menu.dropdown-menu-icons{
+  min-width: 20px;
+  .dropdown-item{
+    padding: 0.25rem 0.5rem;
+  }
+}
 
 @media (min-width: 1200px){
   .container {

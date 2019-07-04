@@ -27,11 +27,12 @@
         /! Preview
         a#shop-preview-image.img-thumbnail.ui-bordered.mb-4 href="#"
           span.product__badge-wrapper
-            .product__badge.red
+            /.product__badge.red
               span скидка
-            .product__badge.green
-              span новинка
-            .product__badge.white
+            - if @product.available_on>Date.current-3.month
+              .product__badge.green
+                span новинка
+            /.product__badge.white
               span hand made
           span.img-thumbnail-overlay.bg-white.opacity-75
           span.img-thumbnail-content.text-primary.text-xlarge
@@ -40,13 +41,12 @@
         = render partial: 'thumbnails'
       .col-md-6
         .product__price = display_price(@product)
-        .product__rating-wrapper.my-2
-          .product__rating.good 4,0
-          .small.text-muted Отзывов: 12
-        table.table.my-4
+        = render 'spree/shared/rating', product: @product
+        div
+          = render partial: 'properties'
+        /table.table.my-4
           tbody
             tr
-              /! Set width of the first column
               td.border-0.text-muted.small.pl-0 style=("width: 110px")  Цвет:
               td.border-0
                 a.ui-product-color.active href="#" style="background:#000;"
@@ -92,16 +92,22 @@
     .product__description.mt-5.py-4
       nav
         #nav-tab.nav.nav-tabs.justify-content-center role="tablist"
-          a#nav-description-tab.nav-item.nav-link.active data-toggle="tab" href="#nav-description" role="tab" aria-controls="nav-description" aria-selected="true" Описание
-          a#nav-delivery-tab.nav-item.nav-link data-toggle="tab" href="#nav-delivery" role="tab" aria-controls="nav-delivery" aria-selected="false" Доставка
-          a#nav-reviews-tab.nav-item.nav-link data-toggle="tab" href="#nav-reviews" role="tab" aria-controls="nav-reviews" aria-selected="false" Отзывы (23)
+          a#nav-description-tab.nav-item.nav-link.active data-toggle="tab" href="#nav-description" role="tab" aria-controls="nav-description" aria-selected="true"
+            = Spree.t(:description)
+          a#nav-delivery-tab.nav-item.nav-link data-toggle="tab" href="#nav-delivery" role="tab" aria-controls="nav-delivery" aria-selected="false"
+            = Spree.t(:delivery)
+          a#nav-reviews-tab.nav-item.nav-link data-toggle="tab" href="#nav-reviews" role="tab" aria-controls="nav-reviews" aria-selected="false"
+            = Spree.t(:reviews)
+            |(
+            = @product.reviews_count
+            |)
       #nav-tabContent.tab-content.mt-5
         #nav-description.tab-pane.fade.show.active
           = product_description(@product)
         #nav-delivery.tab-pane.fade
           = product_description(@product)
         #nav-reviews.tab-pane.fade
-          = product_description(@product)
+          = render 'spree/shared/reviews'
     /.row
       .col-md-4.col-sm-5[data-hook="product_left_part"]
         div[data-hook="product_left_part_wrap"]

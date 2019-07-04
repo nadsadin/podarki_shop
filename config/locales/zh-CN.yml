@@ -1,3 +1,5 @@
 zh-CN:
   spree:
     latest_products: "新产品"
+    password_confirmation: "确认密码"
+    reviews_count: "总评论:"

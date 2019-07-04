@@ -1,4 +1,4 @@
-/=console if Rails.env.development?
+=console if Rails.env.development?
 .sticky-top.nav-top
   nav.navbar.navbar-expand.navbar-light.bg-light.navbar-header
     .container.justify-content-between
@@ -10,14 +10,12 @@
           .search-icon
       div
         ul.navbar-nav
-          li.nav-item
-            a.nav-link.nav-link-icon href="#"
-              i.icon-flag-ru
-          li.nav-item
+          = render partial: 'spree/shared/select_locale'
+          /li.nav-item
             a.nav-link.nav-link-icon href="#"
               i.icon-heart
           li.nav-item
-            a.nav-link.nav-link-icon href="#"
+            = link_to spree.account_path, class: 'nav-link nav-link-icon'
               i.icon-account
           li.nav-item
             = link_to spree.cart_path, class: 'nav-link nav-link-icon'

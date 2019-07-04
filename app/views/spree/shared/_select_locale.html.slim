@@ -1,0 +1,7 @@
+li.nav-item.dropdown
+  a.nav-link.nav-link-icon.dropdown-toggle.hide-arrow data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+    i class="icon-flag-#{I18n.locale.to_s.downcase}"
+  .dropdown-menu.dropdown-menu-icons
+    - (SpreeI18n::Config.available_locales-[I18n.locale]).each do |locale|
+      a.dropdown-item href=url_for(locale: locale)
+        i class="icon-flag-#{locale.to_s.downcase}"

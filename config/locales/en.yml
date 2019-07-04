@@ -32,3 +32,4 @@
 en:
   spree:
     latest_products: "Latest items"
+    reviews_count: "Total reviews:"

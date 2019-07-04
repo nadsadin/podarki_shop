@@ -16,8 +16,11 @@
         span itemprop="priceCurrency" content= current_currency
         /span.product-card__old-price 2 359 ₽
       .product-card__rating-wrapper.my-2
-        .product-card__rating.good 4,0
-        .small.text-muted Отзывов: 12
+        div class="product-card__rating #{rating_class(product.avg_rating)}"
+          = product.avg_rating
+        .small.text-muted
+          => Spree.t(:reviews_count)
+          = product.reviews_count
       .small.text-muted Доступно только в России
 
 

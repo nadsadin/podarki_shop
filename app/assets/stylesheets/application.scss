@@ -78,6 +78,12 @@ body{
   .icon-flag-ru{
     background-image: image_url("ru.png");
   }
+  .icon-flag-en{
+    background-image: image_url("en.png");
+  }
+  .icon-flag-zh-cn{
+    background-image: image_url("zh-cn.png");
+  }
   .icon-account{
     background-image: image_url("account.svg");
   }
@@ -309,6 +315,9 @@ body{
       &.medium{
         background-color: #FCE51A;
       }
+      &.nothing{
+        background-color: #DDDDDD;
+      }
       &-wrapper{
         display: flex;
         align-items: center;
@@ -450,6 +459,9 @@ body{
       &.medium{
         background-color: #FCE51A;
       }
+      &.nothing{
+        background-color: #DDDDDD;
+      }
       &-wrapper{
         display: flex;
         align-items: center;
@@ -528,6 +540,26 @@ body{
     color: #fff;
     @include hover-active{
       text-decoration: none;
+    }
+  }
+
+  .hidden{
+    display: none;
+  }
+  input[type="radio"].hidden,input[type="checkbox"].hidden{
+    display: inline;
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  .form-stars{
+    .ui-star{
+      float: right;
+    }
+    &:not(:checked) > .ui-star:hover> *:first-child, &:not(:checked) > .ui-star:hover ~ .ui-star> *:first-child, &> input:checked ~ .ui-star> *:first-child{
+      display: block;
     }
   }
   @media only screen and (max-width: 575.98px) {

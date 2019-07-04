@@ -1,0 +1,22 @@
+.review itemprop="reviews" itemscope="" itemtype="http://schema.org/Review"
+  span.reviews-rating title="#{txt_stars(review.rating)}"
+    = render 'spree/reviews/stars', stars: review.rating
+  span.font-weight-bold itemprop="name" = review.title
+  .small.text-muted
+    span.attribution
+      => Spree.t(:submitted_on)
+      strong=> l review.created_at.to_date
+    span content="#{review.created_at.to_date.to_s}" itemprop="datePublished"
+    span content="#{review.rating}" itemprop="reviewRating"
+    - if review.show_identifier
+      - if Spree::Reviews::Config[:show_email] && review.user
+        span itemprop="author" = review.user.email
+      - else
+        span itemprop="author" = review.name
+    - else
+      span itemprop="author" = Spree.t(:anonymous)
+  div itemprop="reviewBody"
+    = simple_format(review.review)
+  - if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || spree_current_user)
+    .feedback_review id="feedback_review_#{review.id}"
+      = render 'spree/feedback_reviews/form', review: review

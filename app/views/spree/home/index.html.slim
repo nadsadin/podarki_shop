@@ -23,8 +23,30 @@
         a.btn.btn-rounded.btn-white.btn-w220 href="#"  Подробнее
   /! If we need pagination
   .swiper-pagination
-div.container.mt-5[data-hook="homepage_products"]
-
-  .py-4.h2.text-center = Spree.t('latest_products')
-  - cache(cache_key_for_products) do
-    = render partial: 'spree/shared/products', locals: { products: @products }
+.container.mt-5
+  .py-4.h2.text-center
+    = Spree.t(:taxons)
+  .row.my-4
+    .col-lg-4.col-md-6
+      a.section-card href="#"
+        .section-card__body
+          .section-card__title ИКРА
+          .section-card__description от 1 500 ₽
+        = image_tag 'ikra.png', class: "section-card__image", alt: ""
+    .col-lg-4.col-md-6
+      a.section-card href="#"
+        .section-card__body
+          .section-card__title ЗДОРОВОЕ ПИТАНИЕ
+          .section-card__description от 1 500 ₽
+        = image_tag 'pitanie.png', class: "section-card__image", alt: ""
+    .col-lg-4.col-md-6
+      a.section-card href="#"
+        .section-card__body
+          .section-card__title АРМИЯ
+          .section-card__description от 100 ₽
+        = image_tag 'armiya.png', class: "section-card__image", alt: ""
+.mt-5.bg-primary.pb-5.pt-4
+  .container[data-hook="homepage_products"]
+    .py-4.h2.text-center = Spree.t('latest_products')
+    - cache(cache_key_for_products) do
+      = render partial: 'spree/shared/products', locals: { products: @latest_products }

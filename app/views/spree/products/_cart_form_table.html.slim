@@ -1,0 +1,62 @@
+= form_for :order, html: { id: 'add-to-cart-form' } do |f|
+  table.table.mt-0.mb-4[data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="https://schema.org/Offer"]
+    - if @product.variants_and_option_values(current_currency).any?
+      tr
+        td.border-0.text-muted.small.pl-0
+          = Spree.t(:variants)
+        td.border-0.small
+          - @product.variants_and_option_values(current_currency).each_with_index do |variant, index|
+            .variant
+              = radio_button_tag "variant_id", variant.id, index == 0,
+              -                   'data-price' => variant.price_in(current_currency).money,
+              -                   'data-in-stock' => variant.can_supply?,
+              -                   'data-backordered' => variant.backordered?
+              = label_tag "variant_id_#{ variant.id }" do
+                span.variant-description
+                  = variant.options_text
+                - if variant_price variant
+                  span.price.diff
+                    = variant_price variant
+                - unless variant.can_supply?
+                  span.out-of-stock
+                    = Spree.t(:out_of_stock)
+    - else
+      = hidden_field_tag "variant_id", @product.master.id
+    - if @product.price_in(current_currency) && !@product.price.nil?
+      - if @product.can_supply?
+        tr
+          td.border-0.text-muted.small.pl-0
+            = Spree.t(:quantity)
+          td.border-0.small
+            .input-group
+              = number_field_tag :quantity, 1, class: 'title form-control', min: 1
+              /span.input-group-btn
+                = button_tag class: 'btn btn-success', id: 'add-to-cart-button', type: :submit, disabled: true do
+                  = Spree.t(:add_to_cart)
+    - else
+      #product-price
+        br
+        div
+          span.price.selling[itemprop="price"]
+            = Spree.t('product_not_available_in_this_currency')
+
+    tr
+      td.border-0.text-muted.small.pl-0 Оплата:
+      td.border-0
+        = image_tag 'Visa-light.png', class: 'ui-payment-small'
+        = image_tag 'MasterCard-light.png', class: 'ui-payment-small'
+        = image_tag 'Maestro-light.png', class: 'ui-payment-small'
+
+  - if @product.master.can_supply?
+    link[itemprop="availability" href="https://schema.org/InStock"]
+  - elsif @product.variants.empty?
+    br
+    span.out-of-stock
+      = Spree.t(:out_of_stock)
+  - if @product.backordered?
+    #cart-backordered-info.alert.alert-warning.small
+      = Spree.t(:backordered_info)
+  .product__buttons
+    = button_tag class: 'btn btn-primary btn-rounded', id: 'add-to-cart-button', type: :submit, disabled: true do
+      = Spree.t(:add_to_cart)
+    a.btn.btn-default.btn-rounded.ml-md-2 href="#"  Купить в 1 клик

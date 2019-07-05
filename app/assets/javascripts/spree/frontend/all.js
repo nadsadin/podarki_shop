@@ -1,0 +1,10 @@
+//= require spree
+//= require polyfill.min
+//= require fetch.umd
+//= require spree/api/main
+//= require spree/frontend/api_tokens
+//= require spree/frontend/cart
+//= require spree/frontend/checkout
+//= require spree/frontend/checkout/address
+//= require spree/frontend/checkout/payment
+//= require spree/frontend/product

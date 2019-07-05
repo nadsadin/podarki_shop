@@ -1,6 +1,6 @@
-- unless @product_properties.blank?
-  table.table.my-4
-    tbody
+table.table.mt-4.mb-0
+  tbody
+    - unless @product_properties.blank?
       - @product_properties.each do |product_property|
         - css_class = cycle('even', 'odd', name: "properties")
         tr
@@ -9,6 +9,7 @@
           td.border-0.small
             = product_property.value
       - reset_cycle('properties')
+
   /h3.product-section-title
     = Spree.t('properties')
   /table#product-properties.table.table-striped[data-hook]

@@ -13,11 +13,11 @@ link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,50
 = stylesheet_link_tag 'ionicons.css', media: 'all'
 = csrf_meta_tags
 = render 'spree/shared/paths'
-/= javascript_include_tag 'spree/frontend/all'
 script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
 script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"
 = javascript_include_tag 'bootstrap', 'data-turbolinks-track': 'reload'
 = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+= javascript_include_tag 'spree/frontend/all'
 = yield :styles
 = yield :scripts
 = yield :head

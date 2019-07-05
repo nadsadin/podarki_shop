@@ -44,6 +44,7 @@
         = render 'spree/shared/rating', product: @product
         div
           = render partial: 'properties'
+          = render partial: 'cart_form_table'
         /table.table.my-4
           tbody
             tr
@@ -80,10 +81,6 @@
                 = image_tag 'Visa-light.png', class: 'ui-payment-small'
                 = image_tag 'MasterCard-light.png', class: 'ui-payment-small'
                 = image_tag 'Maestro-light.png', class: 'ui-payment-small'
-        .product__buttons
-          a.btn.btn-primary.btn-rounded href="#"  Добавить в корзину
-          a.btn.btn-default.btn-rounded.ml-md-2 href="#"  Купить в 1 клик
-
 
 
 

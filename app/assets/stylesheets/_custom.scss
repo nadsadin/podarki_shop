@@ -12,6 +12,11 @@ $primary-color: #E84F3C;
     background-color: darken($primary-color, 15%);
     border-color: darken($primary-color, 15%);
   }
+  &.disabled, &:disabled{
+    background-color: $primary-color;
+    border-color: $primary-color;
+    opacity: .65;
+  }
 }
 .btn-default{
   background: #DDDDDD;

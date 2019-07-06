@@ -1,0 +1,18 @@
+
+.container
+  = render :partial => 'spree/shared/error_messages', :locals => { :target => @user }
+  h1= Spree.t(:registration)
+  #registration.row data-hook=""
+    /#account
+    = render :partial => 'new_user'
+    - if Spree::Config[:allow_guest_checkout]
+      .col-md-6
+        .panel.panel-default
+          .panel-heading
+            h3.panel-title= Spree.t(:guest_user_account)
+          #guest_checkout.panel-body data-hook=""
+            = form_for @order, :url => update_checkout_registration_path, :method => :put, :html => { :id => 'checkout_form_registration' } do |f|
+              .form-group
+                = f.label :email, Spree.t(:email), class: 'required', title: 'required'
+                = f.email_field :email, :class => 'form-control title', :placeholder => Spree.t(:email)
+              div.text-center= f.submit Spree.t(:continue), :class => 'btn btn-primary btn-rounded btn-w220'

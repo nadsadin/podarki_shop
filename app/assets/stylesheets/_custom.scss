@@ -73,7 +73,9 @@ $primary-color: #E84F3C;
     padding: 0.25rem 0.5rem;
   }
 }
-
+.no-wrap{
+  white-space: nowrap!important;
+}
 @media (min-width: 1200px){
   .container {
     max-width: 960px;

@@ -15,24 +15,19 @@
           div[data-hook="inside_cart_form"]
             .table-responsive[data-hook="cart_items"]
               = render partial: 'form', locals: { order_form: order_form }
-            .links.col-md-3.navbar-form.pull-right.text-right[data-hook="cart_buttons"]
+            .links.navbar-form.pull-right.text-right.my-3[data-hook="cart_buttons"]
               .form-group
-                = button_tag class: 'btn btn-primary', id: 'update-button' do
+                = link_to Spree.t(:continue_shopping), products_path, class: 'btn btn-default md-btn-flat mr-2 mb-2'
+                = button_tag class: 'btn btn-primary mr-2 mb-2', id: 'update-button' do
                   = Spree.t(:update)
-                = button_tag class: 'btn btn-lg btn-success', id: 'checkout-link', name: 'checkout' do
+                = button_tag class: 'btn btn-success mb-2', id: 'checkout-link', name: 'checkout' do
                   = Spree.t(:checkout)
             - if Spree::Frontend::Config[:coupon_codes_enabled]
-              .col-md-6.form-inline.pull-right[data-hook="coupon_code"]
-                label
-                  = order_form.label :coupon_code
-                  = order_form.text_field :coupon_code, size: '30', class: 'form-control'
-                  = button_tag Spree.t(:coupon_code_apply), class: 'btn btn-default'
-      #empty-cart.col-md-3.pull-left[data-hook]
-        = form_tag empty_cart_path, method: :put do
-          p#clear_cart_link[data-hook]
-            = submit_tag Spree.t(:empty_cart), class: 'btn btn-default'
-            = Spree.t(:or)
-            = link_to Spree.t(:continue_shopping), products_path, class: 'continue'
+              .form-inline[data-hook="coupon_code"]
+                label.w-100.justify-content-md-end.d-block.d-md-flex
+                  = order_form.label :coupon_code, class: 'text-muted mr-2 justify-content-start'
+                  = order_form.text_field :coupon_code, size: '30', class: 'form-control mr-2 mb-2'
+                  = button_tag Spree.t(:coupon_code_apply), class: 'btn btn-primary mb-2'
   script
     |  Spree.current_order_token =
     = @order.token

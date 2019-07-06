@@ -1,32 +1,35 @@
 = render partial: 'spree/shared/error_messages', locals: { target: @order }
-table#cart-detail.table[data-hook]
+table#cart-detail.table.table-bordered.m-0[data-hook]
   thead
-    tr.active[data-hook="cart_items_headers"]
-      th.cart-item-description-header[colspan="2"]
+    tr.small[data-hook="cart_items_headers"]
+      th.text-center.py-3.px-4 style=("min-width: 400px;")
         = Spree.t(:item)
-      th.cart-item-price-header
+      th.text-right.py-3.px-4 style=("width: 100px;")
         = Spree.t(:price)
-      th.cart-item-quantity-header
+      th.text-center.py-3.px-4 style=("width: 120px;")
         = Spree.t(:qty)
-      th.cart-item-total-header
+      th.text-right.py-3.px-4 style=("width: 100px;")
         = Spree.t(:total)
-      th.cart-item-delete-header
+      th.text-center.align-middle.py-3.px-0 style=("width: 40px;")
+        #clear_cart_link[data-hook]
+          = link_to empty_cart_path, method: :put, class: 'shop-tooltip float-none text-muted', title: Spree.t(:empty_cart)
+            i.ino.ion-md-trash
+        /= form_tag empty_cart_path, method: :put do
+          = submit_tag content_tag(:i, class: '').html_safe,class: 'shop-tooltip float-none text-light', title: Spree.t(:empty_cart)
   tbody#line_items[data-hook]
     = render partial: 'spree/orders/line_item', collection: order_form.object.line_items, locals: { order_form: order_form }
   - if @order.adjustments.nonzero.exists? || @order.line_item_adjustments.nonzero.exists? || @order.shipment_adjustments.nonzero.exists? || @order.shipments.any?
     tr.cart-subtotal
-      td[colspan="4" align="right"]
+      td[colspan="3" align="right"]
         h5
           = Spree.t(:cart_subtotal, count: @order.line_items.sum(:quantity))
-      td[colspan]
+      td[colspan="2"]
         h5
           = order_form.object.display_item_total
-      td
     = render "spree/orders/adjustments"
   tr.warning.cart-total
-    td[colspan="4" align="right"]
+    td[colspan="3" align="right"]
       h5
         = Spree.t(:total)
-    td.lead[colspan]
+    td.lead.no-wrap[colspan="2"]
       = order_form.object.display_total
-    td

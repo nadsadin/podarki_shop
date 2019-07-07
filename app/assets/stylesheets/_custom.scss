@@ -21,6 +21,11 @@ $primary-color: #E84F3C;
 .btn-default{
   background: #DDDDDD;
   color: #fff;
+  @include hover-active{
+    background-color: darken(#DDDDDD, 15%);
+    border-color: darken(#DDDDDD, 15%);
+    color: #fff;
+  }
 }
 .btn-white{
   background-color: #fff;
@@ -63,6 +68,12 @@ $primary-color: #E84F3C;
 }
 .text-primary{
   color: $primary-color!important;
+  @at-root a#{&}{
+    @include hover-active{
+      color: darken($primary-color, 15%)!important;
+      border-color: darken($primary-color, 15%)!important;
+    }
+  }
 }
 .dropdown-toggle.hide-arrow::before,.dropdown-toggle.hide-arrow::after,.dropdown-toggle-hide-arrow>.dropdown-toggle::before,.dropdown-toggle-hide-arrow>.dropdown-toggle::after {
   display: none !important

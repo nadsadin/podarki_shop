@@ -98,7 +98,7 @@ table#line-items.table[data-hook="order_details"]
               span
                 = Spree::Money.new(adjustments.sum(&:amount), currency: order.currency)
   tfoot#shipment-total
-    - order.shipments.group_by do |s| s.selected_shipping_rate.name }.each do |name, shipments|
+    - order.shipments.group_by{|s| s.selected_shipping_rate.name }.each do |name, shipments|
       tr.total[data-hook="shipment-row"]
         td.text-muted[colspan="4" align="right"]
           = Spree.t(:shipping)

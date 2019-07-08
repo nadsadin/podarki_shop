@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spree_taxon: one
+  min_price: MyString
+
+two:
+  spree_taxon: two
+  min_price: MyString

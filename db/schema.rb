@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_07_122633) do
+ActiveRecord::Schema.define(version: 2019_07_08_171952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -205,6 +205,14 @@ ActiveRecord::Schema.define(version: 2019_07_07_122633) do
     t.text "preferences"
     t.index ["active"], name: "index_spree_gateways_on_active"
     t.index ["test_mode"], name: "index_spree_gateways_on_test_mode"
+  end
+
+  create_table "spree_homepage_sections", force: :cascade do |t|
+    t.integer "taxon_id"
+    t.string "min_price"
+    t.integer "position", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spree_inventory_units", id: :serial, force: :cascade do |t|

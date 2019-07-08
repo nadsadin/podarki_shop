@@ -1,0 +1,16 @@
+- homepage_sections = Spree::HomepageSection.all.order('position ASC')
+- if homepage_sections.size > 0
+  .container.mt-5
+    .py-4.h2.text-center
+      = Spree.t(:taxons)
+    .row.my-4
+      - homepage_sections.each do |homepage_section|
+        .col-lg-4.col-md-6
+          a.section-card href="#"
+            .section-card__body
+              .section-card__title = homepage_section.taxon.name.capitalize
+              .section-card__description
+                => Spree.t(:from)
+                => homepage_section.min_price
+                | ₽
+            = image_tag image_path(main_app.url_for(homepage_section.image)), class: "section-card__image", alt: ""

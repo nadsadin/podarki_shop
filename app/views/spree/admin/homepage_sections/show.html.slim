@@ -1,0 +1,22 @@
+h1= t(:homepage_section)
+table.table
+  tr data-hook="title"
+    th= t(:taxon)
+    td
+      = @homepage_section.taxon.name
+  tr data-hook="link_url"
+    th= t(:min_price)
+    td
+      = @homepage_section.min_price
+  tr data-hook="image_file_name"
+    th= t(:image_file_name)
+    td
+      = @homepage_section.image_file_name
+  tr data-hook="position"
+    th= t(:position)
+    td
+      = @homepage_section.position
+p
+  => link_to_edit @homepage_section, class: 'edit_homepage_section'
+  => t(:or)
+  = link_to t(:back), collection_url

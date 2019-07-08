@@ -5,12 +5,12 @@
       = f.number_field :position, class: 'fullwidth form-control'
   .col-md-5
     = f.field_container :title do
-      = f.label :title, t(:title)
+      = f.label :title, t(:title), required: true
       br
       = f.text_field :title, class: 'fullwidth form-control', placeholder: t('spree_slider.placeholder_title')
   .col-md-5
     = f.field_container :link do
-      = f.label :link, t(:link)
+      = f.label :link, t(:link), required: true
       br
       = f.text_field :link, class: 'fullwidth form-control', placeholder: t('spree_slider.placeholder_link')
   /.col-md-12
@@ -24,7 +24,7 @@
       i
         | (#{t('spree_slider.image_tip')})
       br
-      = f.file_field :image
+      = f.file_field :image, required: !f.object.image.attached?
   .col-md-6
     = f.field_container :image do
       - if f.object.image.attached?

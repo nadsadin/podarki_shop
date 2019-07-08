@@ -1,0 +1,36 @@
+.row
+  .col-md-2
+    = f.field_container :position do
+      = f.label :position, t(:position)
+      = f.number_field :position, class: 'fullwidth form-control'
+  .col-md-5
+    = f.field_container :min_price do
+      = f.label :min_price, t(:min_price)
+      br
+      = f.text_field :min_price, class: 'fullwidth form-control', placeholder: t('spree_homepage_section.placeholder_min_price')
+      .small.text-muted = t('spree_homepage_section.helper_min_price')
+  .col-md-5
+    = f.field_container :taxon_id do
+      = f.label :taxon_id, Spree.t(:taxons)
+      = f.collection_select(:taxon_id, Spree::Taxon.roots, :id, :name, {include_blank: false}, {class: 'select2'})
+  .col-md-6
+    = f.field_container :image do
+      = f.label :image, t(:image)
+      i
+        | (#{t('spree_slider.image_tip')})
+      br
+      = f.file_field :image, required: !f.object.image.attached?
+  .col-md-6
+    = f.field_container :image do
+      - if f.object.image.attached?
+        p
+          = label_tag t(:preview)
+          br
+          = image_tag image_path(main_app.url_for(f.object.image)), class: 'img-responsive'
+javascript:
+  jQuery(function ($) {
+    $('select.select2').select2({
+      allowClear: true,
+      dropdownAutoWidth: true
+    })
+  });

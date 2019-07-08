@@ -21,5 +21,10 @@ Spree::Core::Engine.routes.draw do
         post :update_positions
       end
     end
+    resources :homepage_sections do
+      collection do
+        post :update_positions
+      end
+    end
   end
 end

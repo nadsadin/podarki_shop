@@ -17,12 +17,14 @@ ru:
   image_file_name: "Имя файла изображения"
   published: "Опубликован"
   position: "Позиция"
+  min_price: "Минимальная цена"
   y: "Да"
   n: "Нет"
 
   activerecord:
     models:
       spree/slide: "Слайд"
+      spree/homepage_section: "Раздел Магазина на главной"
 
   spree_slider:
     config_name: "Слайды"
@@ -34,3 +36,13 @@ ru:
     placeholder_title: "Заголовок слайда"
     placeholder_link: "Ссылка для кнопки на слайде"
     image_tip: "Изображение для слайда"
+  spree_homepage_section:
+    config_name: "Разделы магазина на главной"
+    config_description: "Настройка блока разделы магазина на главной странице сайта"
+    title: "Разделы магазина"
+    new_homepage_section: "Новый Раздел магазина"
+    editing_homepage_section: "Редактирование Раздела магазина"
+    back_to_homepage_sections: "Назад к Разделам магазина"
+    placeholder_min_price: "Значение для блока от х ₽"
+    helper_min_price: "Оставить пустым для автоматического выбора"
+    image_tip: "Изображение для Раздела магазина"

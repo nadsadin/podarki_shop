@@ -1,0 +1,10 @@
+- content_for :page_title do
+  = t('spree_homepage_section.editing_homepage_section')
+- content_for :page_actions do
+  = button_link_to t('spree_homepage_section.back_to_homepage_sections'), spree.admin_homepage_sections_path, icon: 'arrow-left'
+= render 'spree/shared/error_messages', target: @homepage_section
+= form_for [:admin, @homepage_section], html: { multipart: true } do |f|
+  fieldset.no-border-top
+    = render partial: 'form', locals: { f: f }
+    div data-hook="admin_homepage_sections_edit_form_buttons"
+      = render partial: 'spree/admin/shared/edit_resource_links'

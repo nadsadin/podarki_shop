@@ -1,0 +1,20 @@
+- content_for :page_actions do
+  = button_link_to t('spree_slider.new_slide'), new_object_url, { class: 'btn-success', icon: 'add', id: 'admin_new_slide_link' }
+- content_for :page_title do
+  = t('spree_slider.title')
+table#listing_slides.table.sortable data-hook="" data-sortable-link=update_positions_admin_slides_url
+  thead
+    tr data-hook="admin_slides_index_headers"
+      th colspan="2" = Spree.t(:image)
+      th= Spree.t(:title)
+      th.actions data-hook="admin_slides_index_header_actions"
+  tbody
+    - @slides.each do |slide|
+      tr data-hook="admin_slides_index_rows" id=("#{spree_dom_id slide}")
+        td.no-border
+          span.icon.icon-sort.handle
+        td.align-center= image_tag image_path(main_app.url_for(slide.image)), style: 'width: 120px; height: auto;'
+        td.align-center= link_to slide.title, object_url(slide)
+        td.actions data-hook="admin_slides_index_row_actions"
+          = link_to_edit slide, no_text: true, class: 'edit'
+          = link_to_delete slide, no_text: true

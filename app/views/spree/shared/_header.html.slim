@@ -26,7 +26,8 @@
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav
-          - Spree::Taxon.roots.each do |taxon|
+          - Spree::Taxonomy.order('position ASC').each do |taxonomy|
+            - taxon = taxonomy.root
             li.nav-item
               = link_to(taxon.name, seo_url(taxon), class: 'nav-link')
 /#spree-header

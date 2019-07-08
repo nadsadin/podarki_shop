@@ -7,3 +7,30 @@ ru:
     backordered_info: "Если товара нет в наличии Вы можете сделать заказ и его пришлют как только он появится на складе."
     taxons: "Разделы магазина"
     coupon_code_apply: "Применить промокод"
+  next: "Следующий"
+  previous: "Предыдущий"
+  title: "Заголовок"
+  description: "Описание"
+  link: "URL для ссылки"
+  image: "Изображение"
+  preview: "Предпросмотр"
+  image_file_name: "Имя файла изображения"
+  published: "Опубликован"
+  position: "Позиция"
+  y: "Да"
+  n: "Нет"
+
+  activerecord:
+    models:
+      spree/slide: "Слайд"
+
+  spree_slider:
+    config_name: "Слайды"
+    config_description: "Работа со слайдами"
+    title: "Слайды"
+    new_slide: "Новый Слайд"
+    editing_slide: "Редактирование Слайда"
+    back_to_slides: "Назад к Слайдам"
+    placeholder_title: "Заголовок слайда"
+    placeholder_link: "Ссылка для кнопки на слайде"
+    image_tip: "Изображение для слайда"

@@ -1,0 +1,34 @@
+.row
+  .col-md-2
+    = f.field_container :position do
+      = f.label :position, t(:position)
+      = f.number_field :position, class: 'fullwidth form-control'
+  .col-md-5
+    = f.field_container :title do
+      = f.label :title, t(:title)
+      br
+      = f.text_field :title, class: 'fullwidth form-control', placeholder: t('spree_slider.placeholder_title')
+  .col-md-5
+    = f.field_container :link do
+      = f.label :link, t(:link)
+      br
+      = f.text_field :link, class: 'fullwidth form-control', placeholder: t('spree_slider.placeholder_link')
+  /.col-md-12
+    = f.field_container :description do
+      = f.label :description, t(:description)
+      br
+      = f.text_area :description, {cols: 60, rows: 4, class: 'fullwidth form-control'}
+  .col-md-6
+    = f.field_container :image do
+      = f.label :image, t(:image)
+      i
+        | (#{t('spree_slider.image_tip')})
+      br
+      = f.file_field :image
+  .col-md-6
+    = f.field_container :image do
+      - if f.object.image.attached?
+        p
+          = label_tag t(:preview)
+          br
+          = image_tag image_path(main_app.url_for(f.object.image)), class: 'img-responsive'

@@ -1,0 +1,14 @@
+- slides = Spree::Slide.all.order('position ASC')
+- if slides.size > 0
+  #main-slider.swiper-container
+    /! Additional required wrapper
+    .swiper-wrapper
+      /! Slides
+      - slides.each do |slide|
+        .swiper-slide style=("background-image: url('#{main_app.url_for(slide.image)}')")
+          .swiper-slide__content.container
+            .swiper-slide__title
+              = slide.title
+            a.btn.btn-rounded.btn-white.btn-w220 href=slide.link  Подробнее
+    /! If we need pagination
+    .swiper-pagination

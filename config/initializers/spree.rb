@@ -16,6 +16,7 @@ Spree.config do |config|
   SpreeI18n::Config.available_locales = [:en, :ru, :'zh-CN'] # displayed on frontend select box
   SpreeGlobalize::Config.supported_locales = [:en, :ru, :'zh-CN'] # displayed on translation forms
   config.currency = 'RUB'
+
 end
 
 # Configure Spree Dependencies

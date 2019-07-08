@@ -6,7 +6,7 @@
     .row.my-4
       - homepage_sections.each do |homepage_section|
         .col-lg-4.col-md-6
-          a.section-card href="#"
+          = link_to seo_url(homepage_section.taxon), class: 'section-card'
             .section-card__body
               .section-card__title = homepage_section.taxon.name.capitalize
               .section-card__description

@@ -1,0 +1,25 @@
+- if @page.layout.present? and @page.render_layout_as_partial?
+  = render partial: @page.layout
+- else
+  - content_for :head do
+    - if @page.meta_title.present?
+      meta content="#{@page.meta_title}" name="title" /
+    - else
+      meta content="#{@page.title}" name="title" /
+    meta content="#{@page.meta_keywords}" name="keywords" /
+    meta content="#{@page.meta_description}" name="description" /
+  - content_for :sidebar do
+    - if (defined?(@products) && @products) && (defined?(@taxon) && @taxon)
+      = render partial: 'spree/shared/filters'
+    - elsif defined?(@taxonomies) && @taxonomies
+      = render partial: 'spree/shared/taxonomies'
+  .container
+    h1= @page.title
+    nav aria-label="breadcrumb"
+      ol.breadcrumb
+        li.breadcrumb-item
+          = link_to Spree.t(:home), spree.root_path
+        li.breadcrumb-item.active aria-current="page"  Текстовой шаблон
+  .container.mt-5.text-content
+    #page_content
+      = raw @page.body

@@ -8,4 +8,4 @@
   .container[data-hook="homepage_products"]
     .py-4.h2.text-center = Spree.t('latest_products')
     - cache(cache_key_for_products) do
-      = render partial: 'spree/shared/products', locals: { products: @latest_products }
+      = render partial: 'spree/shared/latest_products', locals: { products: @latest_products }

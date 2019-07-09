@@ -1,0 +1,3 @@
+- if products.any?
+  #products.row.mt-4[data-hook]
+    = render partial: 'spree/products/product', collection: products, locals: { taxon: @taxon }

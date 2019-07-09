@@ -72,6 +72,7 @@ class Spree::Import
       else
         update_product_images(product, product_tag.css('Картинка'))
         product.master.stock_items.first.update(count_on_hand: offers[id_1c][:qty].to_i) unless product.master.stock_items.first.count_on_hand == offers[id_1c][:qty].to_i
+        product.set_property('Доставка', 'из Российская Федерация') unless product.property('Доставка').present?
       end
     end
   end

@@ -1,0 +1,2 @@
+<!-- insert_bottom "[data-hook='admin_product_sub_tabs']" -->
+<%= configurations_sidebar_menu_item t('spree_import.config_name'), admin_imports_path %>

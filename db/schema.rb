@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_08_171952) do
+ActiveRecord::Schema.define(version: 2019_07_09_101945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -607,6 +607,7 @@ ActiveRecord::Schema.define(version: 2019_07_08_171952) do
     t.datetime "discontinue_on"
     t.decimal "avg_rating", precision: 7, scale: 5, default: "0.0", null: false
     t.integer "reviews_count", default: 0, null: false
+    t.string "id_1c"
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on"
@@ -1219,6 +1220,7 @@ ActiveRecord::Schema.define(version: 2019_07_08_171952) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "position", default: 0
+    t.string "id_1c"
     t.index ["position"], name: "index_spree_taxonomies_on_position"
   end
 
@@ -1247,6 +1249,7 @@ ActiveRecord::Schema.define(version: 2019_07_08_171952) do
     t.string "meta_description"
     t.string "meta_keywords"
     t.integer "depth"
+    t.string "id_1c"
     t.index ["lft"], name: "index_spree_taxons_on_lft"
     t.index ["name"], name: "index_spree_taxons_on_name"
     t.index ["parent_id"], name: "index_taxons_on_parent_id"

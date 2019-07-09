@@ -1,0 +1,11 @@
+= form_for [:admin, Spree::Import.new], html: { multipart: true } do |f|
+  .row
+    .col-md-12
+      = f.field_container :zip_file do
+        = f.label :zip_file, t('spree_import.zip_file')
+        i
+          | (#{t('spree_import.file_tip')})
+        br
+        = f.file_field :zip_file, required: true
+      br
+      = f.submit t('spree_import.submit'), class: 'btn btn-primary'

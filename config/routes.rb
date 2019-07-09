@@ -26,5 +26,6 @@ Spree::Core::Engine.routes.draw do
         post :update_positions
       end
     end
+    resources :imports, only: [:index, :create]
   end
 end

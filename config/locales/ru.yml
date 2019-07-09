@@ -46,3 +46,9 @@ ru:
     placeholder_min_price: "Значение для блока от х ₽"
     helper_min_price: "Оставить пустым для автоматического выбора"
     image_tip: "Изображение для Раздела магазина"
+  spree_import:
+    config_name: "Импорт"
+    title: "Импорт"
+    submit: "Импортировать"
+    zip_file: "Zip файл"
+    file_tip: "Выберите zip файл для импорта"

@@ -1,0 +1,4 @@
+- content_for :page_title do
+  = t('spree_import.title')
+= render partial: 'spree/admin/shared/error_messages', locals: { target: @import }
+= render 'form'

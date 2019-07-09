@@ -51,6 +51,9 @@ gem 'spree_reviews', github: 'spree-contrib/spree_reviews'
 # autoprefixer for crossbrowser
 gem "autoprefixer-rails"
 
+# unzip for imports
+gem 'rubyzip'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

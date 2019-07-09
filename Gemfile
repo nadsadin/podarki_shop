@@ -82,6 +82,8 @@ group :development do
   gem 'capistrano-rvm'
 
   gem 'capistrano-yarn', git: 'https://github.com/OurHealth/capistrano-yarn.git'
+
+  gem 'capistrano-rails-console', require: false
 end
 
 group :test do

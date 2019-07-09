@@ -3,7 +3,6 @@ class Spree::Admin::ImportsController < Spree::Admin::BaseController
 
   end
   def create
-    console
     @import = Spree::Import.new(import_params)
     @import.set_import_xml
     @import.set_offers_xml

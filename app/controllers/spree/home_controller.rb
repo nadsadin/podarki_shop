@@ -8,6 +8,7 @@ module Spree
       @products = @searcher.retrieve_products
       @products = @products.includes(:possible_promotions) if @products.respond_to?(:includes)
       @latest_products = @searcher.retrieve_products.order('available_on DESC').limit(9)
+      @hit_products = @searcher.retrieve_products.where(is_hit: true)
       @taxonomies = Spree::Taxonomy.includes(root: :children)
     end
   end

@@ -1,0 +1,20 @@
+| <!doctype html>
+html lang= I18n.locale
+  head[data-hook="inside_head"]
+    = render partial: 'spree/shared/head'
+  body class="#{body_class}" id="#{@body_id || 'default'}" data-hook="body"
+    .layout-wrapper
+      = render partial: 'spree/shared/header'
+      = flash_messages
+      .error-wrapper
+        = yield
+      = render partial: 'spree/shared/footer'
+
+      /.container
+        .row[data-hook]
+          = spree_breadcrumbs(@taxon)
+          = render partial: 'spree/shared/sidebar' if content_for? :sidebar
+          div id="content" class="#{!content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9"}" data-hook=""
+            = flash_messages
+            = yield
+        = yield :templates

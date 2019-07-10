@@ -4,8 +4,14 @@
     = render partial: 'spree/shared/taxonomies'
 = render partial: 'spree/shared/slider'
 = render partial: 'spree/shared/homepage_sections'
-.mt-5.bg-primary.pb-5.pt-4
+.mt-5.pb-5.pt-4
   .container[data-hook="homepage_products"]
     .py-4.h2.text-center = Spree.t('latest_products')
     - cache(cache_key_for_products) do
       = render partial: 'spree/shared/latest_products', locals: { products: @latest_products }
+- if @hit_products.any?
+  .mt-5.bg-primary.pb-5.pt-4
+    .container[data-hook="homepage_products"]
+      .py-4.h2.text-center = Spree.t('bestsellers')
+      - cache(cache_key_for_products) do
+        = render partial: 'spree/shared/latest_products', locals: { products: @hit_products }

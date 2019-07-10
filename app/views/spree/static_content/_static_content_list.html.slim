@@ -1,0 +1,5 @@
+- if page.foreign_link.present?
+  = link_to page.title, page.foreign_link, target: '_blank', rel: 'nofollow', class: 'footer-link'
+- else
+  - page_uri = Rails.application.routes.named_routes[:spree].path.spec.to_s == '/' ? page.slug : Rails.application.routes.named_routes[:spree].path.spec.to_s + page.slug
+  = link_to page.title, page_uri, class: 'footer-link'

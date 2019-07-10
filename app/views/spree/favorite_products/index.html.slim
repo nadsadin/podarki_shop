@@ -1,0 +1,42 @@
+.container
+  .account-my-favorite-products.commonform data-hook="account_my_favorite_products"
+    h1= Spree.t(:my_favorite_products)
+    nav aria-label="breadcrumb"
+      ol.breadcrumb
+        li.breadcrumb-item
+          = link_to Spree.t(:home), spree.root_path
+        li.breadcrumb-item.active aria-current="page"
+          = Spree.t(:my_favorite_products)
+    - if @favorite_products.empty? && @favorite_variants.empty?
+      p= Spree.t(:you_have_no_favorite_products_yet)
+    - else
+      table.favorite-products.order-summary.table.table-striped width="100%"
+        thead
+          tr
+            th.favorite-product-image= Spree.t(:product_image)
+            th.favorite-product-name= Spree.t(:product_name)
+            th
+            th.favorite-product-action.text-right= Spree.t(:action)
+        tbody
+          - @favorite_products.each do |product|
+            tr class="#{cycle('even', 'odd')} favorite_product" id="favorite_product_#{product.id}"
+              td.favorite-product-image= link_to mini_image(product), product_path(product)
+              td.favorite-product-name= product.name
+              td
+                - if product.variants.any?
+                  = link_to 'See All Buying Options', product_path(product), class: 'btn btn-success'
+                - else
+                  = render partial: 'cart_form', locals: { item: product, type: 'product' }
+              td.favorite-product-remove.text-right
+                = link_to Spree.t(:remove), favorite_product_path(id: product.id, type: 'Spree::Product'), method: :delete, remote: true, confirm: 'Are you sure you want to remove the product?'
+          - @favorite_variants.each do |variant|
+            tr class="#{cycle('even', 'odd')} favorite_product" id="favorite_variant_#{variant.id}"
+              td.favorite-product-image= link_to mini_image(variant), product_path(variant.product)
+              td.favorite-product-name
+                = variant.product.name
+                br/
+                = variant_options variant
+              td
+                = render partial: 'cart_form', locals: { item: variant, type: 'variant' }
+              td.favorite-product-remove.text-right
+                = link_to Spree.t(:remove), favorite_product_path(id: variant.id, type: 'Spree::Variant'), method: :delete, remote: true, confirm: 'Are you sure you want to remove the product?'

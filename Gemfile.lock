@@ -60,6 +60,14 @@ GIT
       spree_core (>= 3.1.0, < 5.0)
       spree_extension
 
+GIT
+  remote: https://github.com/vinsol-spree-contrib/spree_favorite_products.git
+  revision: 8010f04df93673b765e18f8b100d32e33eabf136
+  specs:
+    spree_favorite_products (3.3.0)
+      spree_core (>= 3.2.0, < 4.0.0)
+      spree_extension (~> 0.0.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -537,6 +545,7 @@ DEPENDENCIES
   spree (~> 3.7.0)
   spree_auth_devise (~> 3.5)
   spree_editor!
+  spree_favorite_products!
   spree_gateway (~> 3.4)
   spree_globalize!
   spree_i18n!

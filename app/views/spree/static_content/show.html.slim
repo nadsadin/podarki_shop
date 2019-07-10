@@ -19,7 +19,8 @@
       ol.breadcrumb
         li.breadcrumb-item
           = link_to Spree.t(:home), spree.root_path
-        li.breadcrumb-item.active aria-current="page"  Текстовой шаблон
+        li.breadcrumb-item.active aria-current="page"
+          = @page.title
   .container.mt-5.text-content
     #page_content
       = raw @page.body

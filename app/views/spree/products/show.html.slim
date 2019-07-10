@@ -12,7 +12,8 @@
   = javascript_include_tag 'blueimp-gallery/gallery-youtube.js'
 - cache cache_key_for_product do
   .container
-    h1 = @product.name
+    h1 itemprop="name"
+      = @product.name
     = custom_breadcrumbs(@taxon)
     .row.mt-5.pb-3.product[data-hook="product_show" itemscope itemtype="https://schema.org/Product"]
       .col-md-6.text-center

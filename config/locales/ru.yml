@@ -10,10 +10,40 @@ ru:
     is_hit: "Отображать в блоке Хиты продаж"
     bestsellers: "Хиты продаж"
     back_to_home: "Вернуться на главную"
+    account: "Личный кабинет"
     error_description:
       404: "Извините, но даннаястраница отсутствует..."
       500: "Что-то пошло не так."
       422: "У вас нет доступа к этой странице."
+
+    admin:
+      tab:
+        favorite_products: "Избранное"
+    duplicate_favorite: 'уже добавлен в избранное'
+    favorite_products:
+      create:
+        success: 'Tовар успешно добавлен в избранное'
+      destroy:
+        success: 'Tовар успешно удален из избранного'
+    favorite_users: "Избранное пользователей"
+    favorite_products_per_page: "Избранное количество на страницу"
+    favorite_products_settings: "Избранное настройки"
+    mark_as_favorite: "Добавить в избранное"
+    unmark_as_favorite: "Удалить из избранного"
+    listing_favorite_products: "Список избранного"
+    listing_favorite_products_users: "Список избранного пользователей"
+    user_count: "Количетсво пользователей"
+    my_favorite_products: "Избранное"
+    product_image: "Изображение Товара"
+    product_name: "Название Товара"
+    favorites: "Избранное"
+    are_you_sure_to_remove_product: "Вы лействительно хотите удалить этот товар?"
+    login_to_add_favorite: "Войдите, чтоб добавить в избранное"
+    favorited_by: "Избранное"
+    variant_does_not_exist: "Вариант товара не существует"
+    save_for_later: "Сохранить на потом"
+    product_not_found: "Товар не енайден"
+    you_have_no_favorite_products_yet: "Вы не добавили еще товаров в избранное"
   next: "Следующий"
   previous: "Предыдущий"
   title: "Заголовок"

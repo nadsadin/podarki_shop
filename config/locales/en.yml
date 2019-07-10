@@ -35,6 +35,9 @@ en:
     reviews_count: "Total reviews:"
     taxons: "Shop sections"
     back_to_home: "Back to home"
+    favorite_products:
+      destroy:
+        success: 'Successfully removed favorite product from your list'
     error_description:
       404: "The page you were looking for doesn't exist."
       500: "We're sorry, but something went wrong."

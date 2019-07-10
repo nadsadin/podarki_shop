@@ -10,8 +10,8 @@
       div
         ul.navbar-nav
           = render partial: 'spree/shared/select_locale'
-          /li.nav-item
-            a.nav-link.nav-link-icon href="#"
+          li.nav-item
+            = link_to favorite_products_path, class: 'nav-link nav-link-icon'
               i.icon-heart
           li.nav-item
             = link_to spree.account_path, class: 'nav-link nav-link-icon'

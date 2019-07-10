@@ -7,12 +7,11 @@
           li.nav-item
             = link_to(taxon.name, seo_url(taxon), class: 'nav-link')
       .footer-links
-        a.footer-link href="#" Личный кабинет
-        a.footer-link href="#" Корзина
-        a.footer-link href="#" Избранное
-        a.footer-link href="#" Контакты
-        a.footer-link href="#" Доставка
-        a.footer-link href="#" Оплата
+
+        = link_to Spree.t('account'),spree.account_path, class: 'footer-link '
+        = link_to Spree.t('cart'),spree.cart_path, class: 'footer-link '
+        = link_to Spree.t('favorites'), favorite_products_path, class: 'footer-link '
+        = render partial: 'spree/static_content/static_content_list', collection: Spree::Page.by_store(current_store).visible.footer_links, as: :page
       .text-center.text-muted.small
         | © kitchai.ru,
         =< Date.current.strftime("%Y")

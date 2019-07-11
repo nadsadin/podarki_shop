@@ -87,6 +87,19 @@ $primary-color: #E84F3C;
 .no-wrap{
   white-space: nowrap!important;
 }
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+.page-link{
+  color: $primary-color;
+  &:hover{
+    color: $primary-color;
+
+  }
+}
 @media (min-width: 1200px){
   .container {
     max-width: 960px;

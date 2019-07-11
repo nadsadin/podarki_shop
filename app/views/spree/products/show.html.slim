@@ -106,7 +106,7 @@
           = product_description(@product)
         #nav-reviews.tab-pane.fade
           = render 'spree/shared/reviews'
-  - if @product.has_related_products?('Похожие товары')
+  - if @product.has_related_products?('Похожие товары') && @product.похожие_товары.any?
     .container.mt-5
       .py-4.h2.text-center
         = Spree.t('similar_products')

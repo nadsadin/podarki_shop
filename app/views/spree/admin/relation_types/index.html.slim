@@ -1,0 +1,32 @@
+- content_for :page_title do
+  = plural_resource_name(Spree::RelationType)
+- content_for :page_actions do
+  = button_link_to Spree.t(:new_relation_type), new_object_url, class: 'btn-primary', icon: 'add', id: 'admin_new_relation_type'
+- if @relation_types.any?
+  table#listing_relation_types.table data-hook=""
+    colgroup
+      col style=("width: 20%") /
+      col style=("width: 20%") /
+      col style=("width: 40%") /
+      col style=("width: 20%") /
+    thead
+      tr data-hook="admin_relation_types_index_headers"
+        th= Spree.t(:name)
+        th= Spree.t(:applies_to)
+        th= Spree.t(:description)
+        th.actions data-hook="admin_pages_index_header_actions"
+    tbody
+      - @relation_types.each do |relation_type|
+        tr class="#{cycle('odd', 'even')}" data-hook="admin_relation_types_index_row" id=("#{spree_dom_id relation_type}")
+          td= relation_type.name
+          td= relation_type.applies_to
+          td= relation_type.description
+          td.actions data-hook="admin_relation_types_index_row_actions"
+            = link_to_edit relation_type, no_text: true
+            = link_to_delete relation_type, no_text: true
+- else
+  .alert.alert-warning.no-objects-found
+    = Spree.t(:no_resource_found, resource: plural_resource_name(Spree::RelationType))
+    | ,
+    = link_to Spree.t(:add_one), spree.new_admin_relation_type_path
+    |!

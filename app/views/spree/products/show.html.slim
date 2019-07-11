@@ -106,6 +106,12 @@
           = product_description(@product)
         #nav-reviews.tab-pane.fade
           = render 'spree/shared/reviews'
+  - if @product.has_related_products?('Похожие товары')
+    .container.mt-5
+      .py-4.h2.text-center
+        = Spree.t('similar_products')
+      = render partial: 'spree/shared/latest_products', locals: { products: @product.похожие_товары }
+
     /.row
       .col-md-4.col-sm-5[data-hook="product_left_part"]
         div[data-hook="product_left_part_wrap"]

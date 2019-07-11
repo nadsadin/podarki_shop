@@ -42,3 +42,4 @@ en:
       404: "The page you were looking for doesn't exist."
       500: "We're sorry, but something went wrong."
       422: "You don't have access to this page"
+    similar_products: "Similar products"

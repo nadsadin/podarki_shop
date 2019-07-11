@@ -4,9 +4,10 @@
       = link_to spree.root_path, class: 'navbar-brand'
         = image_tag "logo.png"
       .navbar-form.d-none.d-md-block
-        .search
-          input.form-control type="search" /
-          .search-icon
+        = form_tag spree.products_path, method: :get, class: "navbar-form" do
+          .search
+            = search_field_tag :keywords, params[:keywords], class: "form-control"
+            .search-icon
       div
         ul.navbar-nav
           = render partial: 'spree/shared/select_locale'

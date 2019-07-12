@@ -11,3 +11,4 @@ zh-CN:
       500: "我们很抱歉，但有些不对劲。"
       422: "您无权访问此页面"
     similar_products: "类似的商品"
+    promotion_label: '提升 %{name}'

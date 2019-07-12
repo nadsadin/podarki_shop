@@ -1,4 +1,5 @@
 .container
+  = console
   - @body_id = 'cart'
   div[data-hook="cart_container"]
     h1
@@ -29,5 +30,6 @@
                   = order_form.text_field :coupon_code, size: '30', class: 'form-control mr-2 mb-2'
                   = button_tag Spree.t(:coupon_code_apply), class: 'btn btn-primary mb-2'
   script
-    |  Spree.current_order_token =
+    |Spree.current_order_token ="
     = @order.token
+    |"

@@ -45,6 +45,7 @@ ru:
     product_not_found: "Товар не енайден"
     you_have_no_favorite_products_yet: "Вы не добавили еще товаров в избранное"
     similar_products: "Похожие товары"
+    cart_subtotal: "Итого"
   next: "Следующий"
   previous: "Предыдущий"
   title: "Заголовок"

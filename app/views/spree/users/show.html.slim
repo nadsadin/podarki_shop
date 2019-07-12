@@ -1,5 +1,7 @@
 .container
   h1= accurate_title
+  .mb-4
+    = link_to(Spree.t(:logout), spree.destroy_spree_user_session_path, class: "text-primary")
   .account-summary.card.bg-light.mb-3 data-hook="account_summary"
     dl#user-info.card-body
       dt= Spree.t(:email)

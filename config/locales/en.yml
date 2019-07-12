@@ -35,6 +35,7 @@ en:
     reviews_count: "Total reviews:"
     taxons: "Shop sections"
     back_to_home: "Back to home"
+    promotion_label: 'Promotion (%{name})'
     favorite_products:
       destroy:
         success: 'Successfully removed favorite product from your list'

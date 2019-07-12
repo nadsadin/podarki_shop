@@ -5,7 +5,7 @@ thead
 tbody#cart_adjustments[data-hook]
   - if @order.line_item_adjustments.exists?
     - @order.line_item_adjustments.promotion.eligible.group_by(&:label).each do |label, adjustments|
-      = render "spree/orders/adjustment_row", label: label, adjustments: adjustments, type: Spree.t(:promotion)
+      = render "spree/orders/adjustment_row", label: adjustments.first.source.promotion.name, adjustments: adjustments, type: Spree.t(:promotion)
   - @order.all_adjustments.tax.eligible.group_by(&:label).each do |label, adjustments|
     = render "spree/orders/adjustment_row", label: label, adjustments: adjustments, type: Spree.t(:tax)
   - @order.shipments.each do |shipment|

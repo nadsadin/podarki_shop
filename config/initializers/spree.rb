@@ -19,6 +19,8 @@ Spree.config do |config|
 
 end
 
+Spree::Auth::Config[:confirmable] = true
+
 # Configure Spree Dependencies
 #
 # Note: If a dependency is set here it will NOT be stored within the cache & database upon initialization.

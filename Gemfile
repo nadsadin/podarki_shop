@@ -49,6 +49,7 @@ gem 'spree_editor', github: 'spree-contrib/spree_editor'
 gem 'spree_reviews', github: 'spree-contrib/spree_reviews'
 gem 'spree_favorite_products', github: 'vinsol-spree-contrib/spree_favorite_products'
 gem 'spree_related_products', github: 'spree-contrib/spree_related_products'
+gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings'
 
 # autoprefixer for crossbrowser
 gem "autoprefixer-rails"

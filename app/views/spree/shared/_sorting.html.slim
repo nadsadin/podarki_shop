@@ -1,0 +1,9 @@
+.section-sort
+  span
+    = Spree.t(:sort_by)
+    |:
+  = link_to Spree.t(:lowest_price), params.merge(sorting: :ascend_by_master_price).to_unsafe_h, class: "#{'active' if current_sorting?(:ascend_by_master_price)}"
+  = link_to Spree.t(:highest_price), params.merge(sorting: :descend_by_master_price).to_unsafe_h, class: "#{'active' if current_sorting?(:descend_by_master_price)}"
+  = link_to Spree.t(:alphabeticaly), params.merge(sorting: :ascend_by_translated_name).to_unsafe_h, class: "#{'active' if current_sorting?(:ascend_by_translated_name)}"
+  = link_to Spree.t(:popular_first), params.merge(sorting: :descend_by_popularity).to_unsafe_h, class: "#{'active' if current_sorting?(:descend_by_popularity)}"
+  = link_to Spree.t(:by_feedback), params.merge(sorting: :descend_by_avg_rating).to_unsafe_h, class: "#{'active' if current_sorting?(:descend_by_avg_rating)}"

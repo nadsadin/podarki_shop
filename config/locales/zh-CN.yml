@@ -1,9 +1,9 @@
 zh-CN:
   spree:
-    latest_products: "新产品"
+    latest_products: "新品"
     password_confirmation: "确认密码"
     reviews_count: "总评论:"
-    taxons: "商店部分"
+    taxons: "商店各区域"
     bestsellers: "最畅销"
     back_to_home: "回到主页"
     error_description:
@@ -12,3 +12,9 @@ zh-CN:
       422: "您无权访问此页面"
     similar_products: "类似的商品"
     promotion_label: '提升 %{name}'
+    lowest_price: "价格从低到高"
+    highest_price: "价格从高到低"
+    alphabeticaly: "按字母"
+    popular_first: "热门第一"
+    sort_by: "排序方式"
+    by_feedback: "按评价"

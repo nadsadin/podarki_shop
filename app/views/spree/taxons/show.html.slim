@@ -6,13 +6,11 @@
     div[data-hook="taxon_sidebar_navigation"]
       = render partial: 'spree/shared/taxonomies'
       = render partial: 'spree/shared/filters' if @taxon.leaf?
+  .mt-5
+    = @taxon.description
   .mt-5.section[data-hook="taxon_products"]
-    .section-sort
-      span Сортировать:
-      a.active href="#"  Дешевле
-      a href="#"  Дороже
-      a href="#"  По алфавиту
-      a href="#"  По отзывам
+    - unless @products.empty?
+      = render partial: 'spree/shared/sorting'
     = render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon }
   - unless params[:keywords].present?
     div[data-hook="taxon_children"]

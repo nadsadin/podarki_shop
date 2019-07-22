@@ -67,7 +67,7 @@ body{
     }
   }
   .navbar-menu{
-    height: 75px;
+    min-height: 75px;
   }
   .nav-top{
     box-shadow: 0px 0px 20px rgba(162, 162, 162, 0.25);
@@ -103,6 +103,9 @@ body{
         color: #212121;
         @include hover-active{
           color: $primary-color;
+        }
+        @media only screen and (max-width: 991.98px) {
+          font-size: 16px;
         }
       }
     }

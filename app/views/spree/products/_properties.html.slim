@@ -1,10 +1,15 @@
 table.table.mt-4.mb-0
   tbody
+    tr
+      td.border-0.text-muted.small.pl-0 style=("width: 110px")
+        = Spree.t('sku')
+      td.border-0.small
+        = @product.sku
     - unless @product_properties.blank?
       - @product_properties.each do |product_property|
         - css_class = cycle('even', 'odd', name: "properties")
         tr
-          td.border-0.text-muted.small.pl-0 style=("width: 110px")
+          td.border-0.text-muted.small.pl-0
             = product_property.property.presentation
           td.border-0.small
             = product_property.value

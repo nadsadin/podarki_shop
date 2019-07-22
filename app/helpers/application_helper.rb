@@ -18,4 +18,8 @@ module ApplicationHelper
   def available_locales
     SpreeI18n::Config.available_locales.map { |locale| locale.to_s.downcase }
   end
+
+  def current_sorting?(key)
+    sorting_param == key.to_sym
+  end
 end

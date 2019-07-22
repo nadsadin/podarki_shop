@@ -31,9 +31,9 @@
 
 en:
   spree:
-    latest_products: "Latest items"
+    latest_products: "New Sales"
     reviews_count: "Total reviews:"
-    taxons: "Shop sections"
+    taxons: "Shop Departments"
     back_to_home: "Back to home"
     promotion_label: 'Promotion (%{name})'
     favorite_products:
@@ -44,3 +44,9 @@ en:
       500: "We're sorry, but something went wrong."
       422: "You don't have access to this page"
     similar_products: "Similar products"
+    lowest_price: "Price: Low to High"
+    highest_price: "Price: High to Low"
+    alphabeticaly: "Alphabetically"
+    popular_first: "Popular First"
+    sort_by: "Sort by"
+    by_feedback: "By feedback"

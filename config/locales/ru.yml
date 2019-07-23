@@ -53,6 +53,10 @@ ru:
     by_feedback: "По отзывам"
     sort_by: "Сортировать"
     minimum_password_length: "(минимум 6 символов)"
+    required_fields: "Обязательные поля"
+    payment_state: "Статус платежа"
+    subtotal: "Итого"
+    shipments: "Доставка"
   next: "Следующий"
   previous: "Предыдущий"
   title: "Заголовок"
@@ -66,7 +70,10 @@ ru:
   min_price: "Минимальная цена"
   y: "Да"
   n: "Нет"
-
+  devise:
+    user_registrations:
+      spree_user:
+        signed_up_but_unconfirmed: "На указанный вами адрес электронной почты выслано письмо с кодом подтверждения. Пожалуйста, перейдите по ссылке в письме для подтверждения адреса."
   activerecord:
     models:
       spree/slide: "Слайд"

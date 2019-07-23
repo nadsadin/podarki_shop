@@ -29,9 +29,9 @@
             tr
               td.order-number= link_to order.number, order_url(order)
               td.order-date= l order.completed_at.to_date
-              td.order-status= Spree.t("order_state.# order.state ").titleize
-              td.order-payment-state= Spree.t("payment_states.# order.payment_state ").titleize if order.payment_state
-              td.order-shipment-state= Spree.t("shipment_states.# order.shipment_state ").titleize if order.shipment_state
+              td.order-status= Spree.t("order_state.#{order.state}").titleize
+              td.order-payment-state= Spree.t("payment_states.#{order.payment_state}").titleize if order.payment_state
+              td.order-shipment-state= Spree.t("shipment_states.#{order.shipment_state}").titleize if order.shipment_state
               td.lead.text-primary.order-total= order.display_total
     - else
       .alert.alert-info role="alert" = Spree.t(:you_have_no_orders_yet)

@@ -20,6 +20,7 @@ Spree.config do |config|
 end
 
 Spree::Auth::Config[:confirmable] = true
+Spree::Config[:address_requires_state] = false
 
 # Configure Spree Dependencies
 #

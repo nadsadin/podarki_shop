@@ -1,6 +1,6 @@
 .row.steps-data
   - if order.has_step?("address")
-    .col-md-3.col-sm-3.col-xs-6[data-hook="order-bill-address"]
+    /.col-md-3.col-sm-3.col-xs-6[data-hook="order-bill-address"]
       h4
         = Spree.t(:billing_address)
         = link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless order.completed?
@@ -18,7 +18,8 @@
         .delivery
           - order.shipments.each do |shipment|
             div
-              = Spree.t(:shipment_details, stock_location: shipment.stock_location.name, shipping_method: shipment.selected_shipping_rate.name)
+              = shipment.selected_shipping_rate.name
+              /= Spree.t(:shipment_details, stock_location: shipment.stock_location.name, shipping_method: shipment.selected_shipping_rate.name)
         = render 'spree/shared/shipment_tracking', order: order if order.shipped?
   - if order.has_step?("payment")
     .col-md-3.col-sm-3.col-xs-6[data-hook="order-payment"]
@@ -58,12 +59,12 @@ table#line-items.table[data-hook="order_details"]
             = item.name
           = truncate(item.description, length: 100)
           = "(" + item.variant.options_text + ")" unless item.variant.option_values.empty?
-        td.lead.text-primary.price[data-hook="order_item_price"]
+        td.text-primary.price.no-wrap[data-hook="order_item_price"]
           span
             = item.single_money.to_html
         td.order-qty[data-hook="order_item_qty"]
           = item.quantity
-        td.lead.text-primary.total[data-hook="order_item_total"]
+        td.text-primary.total.no-wrap[data-hook="order_item_total"]
           span
             = item.display_amount.to_html
   tfoot#order-total[data-hook="order_details_total"]
@@ -73,7 +74,7 @@ table#line-items.table[data-hook="order_details"]
           = Spree.t(:order_total)
           | :
       td.total
-        span#order_total.lead.text-primary
+        span#order_total.no-wrap.text-primary
           = order.display_total.to_html
   tfoot#subtotal[data-hook="order_details_subtotal"]
     tr#subtotal-row.total
@@ -82,7 +83,7 @@ table#line-items.table[data-hook="order_details"]
           = Spree.t(:subtotal)
           | :
       td.total
-        span
+        span.no-wrap
           = order.display_item_total.to_html
   - if order.line_item_adjustments.exists?
     - if order.line_item_adjustments.promotion.eligible.exists?
@@ -95,7 +96,7 @@ table#line-items.table[data-hook="order_details"]
               strong
                 = label
             td.total
-              span
+              span.no-wrap
                 = Spree::Money.new(adjustments.sum(&:amount), currency: order.currency)
   tfoot#shipment-total
     - order.shipments.group_by{|s| s.selected_shipping_rate.name }.each do |name, shipments|
@@ -106,7 +107,7 @@ table#line-items.table[data-hook="order_details"]
           strong
             = name
         td.total
-          span
+          span.no-wrap
             = Spree::Money.new(shipments.sum(&:discounted_cost), currency: order.currency).to_html
   - if order.all_adjustments.tax.exists?
     tfoot#tax-adjustments[data-hook="order_details_tax_adjustments"]
@@ -118,7 +119,7 @@ table#line-items.table[data-hook="order_details"]
             strong
               = label
           td.total
-            span
+            span.no-wrap
               = Spree::Money.new(adjustments.sum(&:amount), currency: order.currency)
   tfoot#order-charges[data-hook="order_details_adjustments"]
     - order.adjustments.eligible.each do |adjustment|

@@ -19,3 +19,20 @@ zh-CN:
     sort_by: "排序方式"
     by_feedback: "按评价"
     minimum_password_length: "(最少6个字符)"
+    required_fields: "必填字段"
+    order_state:
+      address: 地址
+      awaiting_return: 等待回归
+      canceled: 取消
+      cart: 大车
+      complete: 讫
+      confirm: 确认
+      considered_risky:
+      delivery: 交货
+      payment: 付款
+      resumed: 恢复
+      returned: 回
+  devise:
+    user_registrations:
+      spree_user:
+        signed_up_but_unconfirmed: "带有验证码的电子邮件已发送到您的电子邮件地址。 请按照电子邮件中的链接验证地址。"

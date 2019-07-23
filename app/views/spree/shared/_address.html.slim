@@ -11,7 +11,7 @@
       - unless address.address2.blank?
         .street-address-line
           = address.address2
-    .local
+    /.local
       span.locality
         = address.city
       - if Spree::Config[:address_requires_state]
@@ -25,7 +25,7 @@
     .tel
       span.type
         = Spree.t(:phone)
-      = address.phone
+      =< address.phone
   - unless address.alternative_phone.blank?
     .alternative-phone.tel
       span.type

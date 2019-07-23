@@ -9,19 +9,19 @@
       .col-sm-3
       .col-sm-9[data-hook="checkout_progress"]
     .row[data-hook="checkout_content"]
-      div class="#{@order.state != 'confirm' ? 'col-md-9' : 'col-md-12'}" data-hook="checkout_form_wrapper"
-      = form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form|
-        - if @order.state == 'address' || !@order.email?
-          .panel.panel-default
-            .panel-body
-              .form-group
-                = form.label :email
-                = form.email_field :email, class: 'form-control', required: true
-        = form.hidden_field :state_lock_version
-        = render @order.state, form: form
-    - if @order.state != 'confirm'
-      #checkout-summary.col-md-3[data-hook="checkout_summary_box"]
-        = render partial: 'summary', locals: { order: @order }
+      div class="#{@order.state != 'confirm' ? 'col-md-8' : 'col-md-12'}" data-hook="checkout_form_wrapper"
+        = form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form|
+          - if @order.state == 'address' || !@order.email?
+            .panel.panel-default
+              .panel-body
+                .form-group
+                  = form.label :email
+                  = form.email_field :email, class: 'form-control', required: true
+          = form.hidden_field :state_lock_version
+          = render @order.state, form: form
+      - if @order.state != 'confirm'
+        #checkout-summary.col-md-4[data-hook="checkout_summary_box"]
+          = render partial: 'summary', locals: { order: @order }
 script
   |  Spree.current_order_id =
   = @order.number

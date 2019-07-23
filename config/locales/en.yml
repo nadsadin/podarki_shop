@@ -51,3 +51,8 @@ en:
     sort_by: "Sort by"
     by_feedback: "By feedback"
     minimum_password_length: "(6 characters minimum)"
+    required_fields: "Required fields"
+  devise:
+    user_registrations:
+      spree_user:
+        signed_up_but_unconfirmed: "An email with a verification code has been sent to your email address. Please follow the link in the email to verify the address."

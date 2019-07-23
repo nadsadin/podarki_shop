@@ -52,6 +52,7 @@ ru:
     popular_first: "По популярности"
     by_feedback: "По отзывам"
     sort_by: "Сортировать"
+    minimum_password_length: "(минимум 6 символов)"
   next: "Следующий"
   previous: "Предыдущий"
   title: "Заголовок"

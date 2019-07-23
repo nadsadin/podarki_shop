@@ -1,6 +1,6 @@
 | <!doctype html>
 html lang= I18n.locale
-  = console if Rails.env.development?
+  /= console if Rails.env.development?
   head[data-hook="inside_head"]
     = render partial: 'spree/shared/head'
   body class="#{body_class}" id="#{@body_id || 'default'}" data-hook="body"

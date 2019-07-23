@@ -18,3 +18,4 @@ zh-CN:
     popular_first: "热门第一"
     sort_by: "排序方式"
     by_feedback: "按评价"
+    minimum_password_length: "(最少6个字符)"

@@ -50,3 +50,4 @@ en:
     popular_first: "Popular First"
     sort_by: "Sort by"
     by_feedback: "By feedback"
+    minimum_password_length: "(6 characters minimum)"

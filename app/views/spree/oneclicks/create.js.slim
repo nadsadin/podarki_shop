@@ -1,6 +1,7 @@
-|$('#oneclickModal').modal('hide');
 |$('.layout-content .container:first-child').html('
 = render 'message'
 |');
+|$('#oneclickModal').modal('hide');
+|$('.modal-backdrop').remove();
 |$(document).scrollTop(0);
 

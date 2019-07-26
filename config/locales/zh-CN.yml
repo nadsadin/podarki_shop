@@ -42,5 +42,5 @@ zh-CN:
   active_record:
     attributes:
       spree/oneclick:
-        name: "Name"
-        phone: "Phone"
+        name: "名称"
+        phone: "电话"

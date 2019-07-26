@@ -85,8 +85,8 @@ ru:
       spree/homepage_section: "Раздел Магазина на главной"
     attributes:
       spree/oneclick:
-        name: "名称"
-        phone: "电话"
+        name: "Имя"
+        phone: "Телефон"
 
   spree_slider:
     config_name: "Слайды"

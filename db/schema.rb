@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_25_153705) do
+ActiveRecord::Schema.define(version: 2019_07_26_145900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1013,6 +1013,16 @@ ActiveRecord::Schema.define(version: 2019_07_25_153705) do
     t.index ["shipment_id"], name: "index_spree_shipping_rates_on_shipment_id"
     t.index ["shipping_method_id"], name: "index_spree_shipping_rates_on_shipping_method_id"
     t.index ["tax_rate_id"], name: "index_spree_shipping_rates_on_tax_rate_id"
+  end
+
+  create_table "spree_slide_translations", force: :cascade do |t|
+    t.bigint "spree_slide_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["locale"], name: "index_spree_slide_translations_on_locale"
+    t.index ["spree_slide_id"], name: "index_spree_slide_translations_on_spree_slide_id"
   end
 
   create_table "spree_slides", force: :cascade do |t|

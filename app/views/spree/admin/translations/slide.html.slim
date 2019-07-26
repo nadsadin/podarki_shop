@@ -1,0 +1,15 @@
+- content_for :page_title do
+  = Spree.t(:editing_resource, resource: Spree::Slide.model_name.human)
+- content_for :page_actions do
+  = button_link_to Spree.t(:back_to_resource_list, resource: Spree::Slide.model_name.human), spree.admin_slides_path, class: 'btn-primary', icon: 'arrow-left'
+= render 'settings'
+.row.translations
+  .col-md-4
+    = render 'fields'
+  .col-md-8
+    = form_for [:admin, @resource, @resource], url: spree.admin_slide_path(@slide) do |f|
+      = render 'form_fields', f: f
+      .form-actions data-hook="buttons" 
+        = button Spree.t(:update), 'update'
+        span.or= Spree.t(:or)
+        = button_link_to Spree.t(:cancel), spree.edit_admin_slide_url(@slide), icon: 'remove'

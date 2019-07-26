@@ -4,7 +4,7 @@ table.table
     th= t(:title)
     td
       = @slide.title
-  tr data-hook="body"
+  /tr data-hook="body"
     th= t(:description)
     td
       = @slide.description
@@ -15,7 +15,7 @@ table.table
   tr data-hook="image_file_name"
     th= t(:image_file_name)
     td
-      = @slide.image_file_name
+      = @slide.image.filename
   tr data-hook="position"
     th= t(:position)
     td

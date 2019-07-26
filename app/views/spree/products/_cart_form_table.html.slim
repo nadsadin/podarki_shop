@@ -59,4 +59,22 @@
   .product__buttons
     = button_tag class: 'btn btn-primary btn-rounded', id: 'add-to-cart-button', type: :submit, disabled: true do
       = Spree.t(:add_to_cart)
-    a.btn.btn-default.btn-rounded.ml-md-2 href="#"  Купить в 1 клик
+    a.btn.btn-default.btn-rounded.ml-md-2 data-toggle="modal" data-target="#oneclickModal" href="#"
+      = Spree.t(:one_click_buy)
+#oneclickModal.modal.fade aria-hidden="true" aria-labelledby="oneclickModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog role="document"
+    .modal-content
+      = form_for Spree::Oneclick.new(product: @product), remote: true do |form|
+        .modal-header
+          h5#oneclickModalLabel.modal-title = Spree.t(:one_click_buy)
+          button.close aria-label="Close" data-dismiss="modal" type="button"
+            span aria-hidden="true"  ×
+        .modal-body
+          = form.hidden_field :product_id
+          .form-group
+            = form.text_field :name, class: 'form-control', placeholder: Spree.t(:first_name)+'*'
+          .form-group
+            = form.phone_field :phone, class: 'form-control', placeholder: Spree.t(:phone)+'*'
+        .modal-footer
+          button.btn.btn-secondary.btn-rounded data-dismiss="modal" type="button"  = Spree.t(:close)
+          button.btn.btn-primary.btn-rounded type="submit"  = Spree.t(:confirm)

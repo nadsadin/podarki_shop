@@ -1,0 +1,12 @@
+p
+  = Spree.t(:first_name)
+  |:
+  =< @name
+p
+  = Spree.t(:phone)
+  |:
+  =< @phone
+p
+  = Spree.t(:product)
+  |:
+  =< link_to @product.name, product_url(@product)

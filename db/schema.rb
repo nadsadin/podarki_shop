@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_11_095531) do
+ActiveRecord::Schema.define(version: 2019_07_25_153705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -313,6 +313,14 @@ ActiveRecord::Schema.define(version: 2019_07_11_095531) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["uid"], name: "index_spree_oauth_applications_on_uid", unique: true
+  end
+
+  create_table "spree_oneclicks", force: :cascade do |t|
+    t.string "name"
+    t.string "phone"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spree_option_type_prototypes", id: :serial, force: :cascade do |t|

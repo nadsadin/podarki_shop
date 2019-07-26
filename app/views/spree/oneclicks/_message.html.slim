@@ -1,0 +1,9 @@
+.alert.alert-dismissible.fade.show.mt-4 role="alert" class = "#{@oneclick.errors.present? ? 'alert-danger' : 'alert-success'}"
+  - if @oneclick.errors.present?
+    = Spree.t(:one_click_error)
+    br
+    = @oneclick.errors.full_messages.join('<br>').html_safe
+  - else
+    = Spree.t(:one_click_success)
+  button.close aria-label="Close" data-dismiss="alert" type="button"
+    span aria-hidden="true"  ×

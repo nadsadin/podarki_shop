@@ -57,6 +57,11 @@ ru:
     payment_state: "Статус платежа"
     subtotal: "Итого"
     shipments: "Доставка"
+    oneclick_email_to: "Email для формы купить в один клик"
+    oneclick_email_to_info: "Отправлять все сообщения из формы купить в один клик на этот адрес"
+    one_click_buy: "Купить в 1 клик"
+    one_click_error: "Не удалось отправить запрос"
+    one_click_success: "Заказ успешно отправлен. Мы скоро свяжемся с вами для уточнения деталей."
   next: "Следующий"
   previous: "Предыдущий"
   title: "Заголовок"
@@ -78,6 +83,10 @@ ru:
     models:
       spree/slide: "Слайд"
       spree/homepage_section: "Раздел Магазина на главной"
+    attributes:
+      spree/oneclick:
+        name: "名称"
+        phone: "电话"
 
   spree_slider:
     config_name: "Слайды"

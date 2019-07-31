@@ -10,7 +10,7 @@ tbody#cart_adjustments[data-hook]
     = render "spree/orders/adjustment_row", label: label, adjustments: adjustments, type: Spree.t(:tax)
   - @order.shipments.each do |shipment|
     tr
-      td[colspan="4" align="right"]
+      td[colspan="3" align="right"]
         h5
           = Spree.t(:shipping)
           | : 

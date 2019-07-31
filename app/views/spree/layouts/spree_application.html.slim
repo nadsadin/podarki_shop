@@ -10,7 +10,7 @@ html lang= I18n.locale
         = flash_messages
         = yield
       -else
-        .layout-content
+        .layout-content.bg-main
           .container = flash_messages
           = yield
       = render partial: 'spree/shared/footer'

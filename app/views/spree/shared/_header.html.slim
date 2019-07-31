@@ -20,7 +20,7 @@
           li.nav-item
             = link_to spree.cart_path, class: 'nav-link nav-link-icon'
               i.icon-cart
-  nav.navbar.navbar-expand-lg.bg-white.navbar-light.navbar-menu
+  nav.navbar.navbar-expand-lg.navbar-light.navbar-menu.bg-nav-top
     .container
       button.navbar-toggler.ml-auto aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
         span.navbar-toggler-icon
@@ -29,7 +29,7 @@
           - Spree::Taxonomy.order('position ASC').each do |taxonomy|
             - taxon = taxonomy.root
             li.nav-item
-              = link_to(taxon.name, seo_url(taxon), class: 'nav-link')
+              = link_to(taxon.name, seo_url(taxon), class: 'nav-link text-primary')
 /#spree-header
   header#header[data-hook]
     .container

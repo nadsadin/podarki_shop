@@ -1,5 +1,6 @@
 @import "mixins";
 $primary-color: #E84F3C;
+$color-on-red: darken(#fff, 20%);
 
 .text-muted{
   color: #A3A3A3;
@@ -62,6 +63,12 @@ $primary-color: #E84F3C;
 .bg-primary{
   background-color: $primary-color!important;
   color: #fff;
+}
+.bg-nav-top{
+  background-color: #ffd700;
+}
+.bg-main{
+  background-color: #fff1ba;
 }
 .border-primary{
   border-color: $primary-color!important;

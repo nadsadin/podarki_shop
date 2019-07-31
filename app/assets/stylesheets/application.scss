@@ -203,8 +203,8 @@ body{
         padding-bottom: 50px;
       }
       &__title{
-        padding-top: 140px;
-        padding-bottom: 66px;
+        padding-top: 230px;
+        padding-bottom: 40px;
         font-family: Montserrat;
         font-style: normal;
         font-weight: 800;
@@ -232,6 +232,7 @@ body{
   }
   .section-card{
     border: 1px solid #EAEAEA;
+    background-color: #fff;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

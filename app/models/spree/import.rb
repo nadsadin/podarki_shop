@@ -61,7 +61,7 @@ class Spree::Import
           sku: product_tag.at_css('Артикул').children.to_s,
           name: product_tag.at_css('Наименование').children.to_s,
           taxon_ids: Spree::Taxon.where(id_1c: taxon_id_1c).ids,
-          description: product.description.present? ? product.description : product_tag.at_css('Описание').children.to_s.gsub!(/\n/, '</p><p>'),
+          description: product.description.present? ? product.description : product_tag.at_css('Описание').children.to_s.gsub(/\n/, '</p><p>'),
           price: offers[id_1c][:price],
           cost_currency: offers[id_1c][:currency],
       }

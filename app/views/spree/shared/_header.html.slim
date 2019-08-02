@@ -29,7 +29,7 @@
           - Spree::Taxonomy.order('position ASC').each do |taxonomy|
             - taxon = taxonomy.root
             li.nav-item
-              = link_to(taxon.name, seo_url(taxon), class: 'nav-link text-primary')
+              = link_to(taxon.name, seo_url(taxon), class: 'nav-link')
 /#spree-header
   header#header[data-hook]
     .container

@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 #
 #
 #
-
+gem "sentry-raven"
 gem 'slim'
 gem 'slim-rails'
 

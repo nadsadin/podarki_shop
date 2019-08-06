@@ -6,7 +6,9 @@ require 'i18n/backend/fallbacks'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-
+Raven.configure do |config|
+  config.dsn = 'https://164812e525ed4132af4572ccb1533347:bea7a16297aa4965aa39f5dea420c2e3@sentry.io/1522422'
+end
 module PodarkiShop
   class Application < Rails::Application
 

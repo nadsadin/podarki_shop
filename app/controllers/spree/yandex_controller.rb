@@ -17,7 +17,7 @@ module Spree
         result = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => uri.scheme == 'https') do |http|
           http.request(req)
         end
-        payment_result = JSON.parse(result.body) if result.status == 200
+        payment_result = JSON.parse(result.body)
         if payment_result['status'] == payment_request['status']
           if payment_result['status'] == 'waiting_for_capture'
             payment.started_processing unless payment.processing?

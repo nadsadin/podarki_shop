@@ -104,7 +104,9 @@
         #nav-description.tab-pane.fade.show.active
           = product_description(@product)
         #nav-delivery.tab-pane.fade
-          = product_description(@product)
+          - delivery = Spree::Page.where(show_in_product: true).first
+          - if delivery.present?
+            = raw(delivery.body)
         #nav-reviews.tab-pane.fade
           = render 'spree/shared/reviews'
   - if @product.has_related_products?('Похожие товары') && @product.похожие_товары.any?

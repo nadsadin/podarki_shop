@@ -92,6 +92,8 @@ ru:
       spree/oneclick:
         name: "Имя"
         phone: "Телефон"
+      spree/page:
+        show_in_product: "Отображать во вкладке доставка в товаре"
 
   spree_slider:
     config_name: "Слайды"

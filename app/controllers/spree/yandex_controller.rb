@@ -9,6 +9,7 @@ module Spree
         payment = yandex.payment if yandex.present?
         payment_method = Spree::PaymentMethod.find(payment.payment_method_id) if payment.present?
         Raven.extra_context(
+                 json_result: json_result,
                  payment_request: payment_request,
                  yandex: yandex,
                  payment: payment,

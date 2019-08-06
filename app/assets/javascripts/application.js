@@ -12,7 +12,7 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+// require turbolinks
 //= require swiper.min
 //= require custom
 //= require shop

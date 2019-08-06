@@ -7,7 +7,13 @@ module Spree
         payment_request = json_result['object']
         yandex = Spree::YandexCheckout.where(yandex_id: payment_request['id']).first
         payment = yandex.payment if yandex.present?
-        payment_method = Spree::PaymentMethod.find(payment.payment_method_id)
+        payment_method = Spree::PaymentMethod.find(payment.payment_method_id) if payment.present?
+        Raven.extra_context(
+                 payment_request: payment_request,
+                 yandex: yandex,
+                 payment: payment,
+                 payment_method: payment_method
+        )
         render(status: 500)&&return unless yandex.present? && payment.present? && payment_method.present?
         url = "https://payment.yandex.net/api/v3/payments/#{payment_request['id']}"
         uri = URI(url)

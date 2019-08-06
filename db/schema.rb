@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_26_145900) do
+ActiveRecord::Schema.define(version: 2019_08_04_133314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1383,6 +1383,17 @@ ActiveRecord::Schema.define(version: 2019_07_26_145900) do
     t.index ["sku"], name: "index_spree_variants_on_sku"
     t.index ["tax_category_id"], name: "index_spree_variants_on_tax_category_id"
     t.index ["track_inventory"], name: "index_spree_variants_on_track_inventory"
+  end
+
+  create_table "spree_yandex_checkouts", force: :cascade do |t|
+    t.string "idempotence_key"
+    t.string "confirmation_url"
+    t.string "refundable"
+    t.string "yandex_id"
+    t.string "status"
+    t.integer "payment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spree_zone_members", id: :serial, force: :cascade do |t|

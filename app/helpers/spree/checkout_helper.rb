@@ -3,6 +3,7 @@ module Spree::CheckoutHelper
     states = @order.checkout_steps
     icon_classes = {"address" => 'sw-icon ion ion-md-map', "delivery" => "sw-icon ion ion-ios-airplane", "payment" => "sw-icon ion ion-md-card", "complete" => "sw-icon ion ion-md-checkmark-circle-outline"}
     items = states.each_with_index.map do |state, i|
+      next if state=="complete"
       text = Spree.t("order_state.#{state}").titleize
       item_icon = content_tag('span','', class: icon_classes[state])
       item_done_icon = content_tag('span','', class: 'sw-done-icon ion ion-md-checkmark')

@@ -62,6 +62,11 @@ ru:
     one_click_buy: "Купить в 1 клик"
     one_click_error: "Не удалось отправить запрос"
     one_click_success: "Заказ успешно отправлен. Мы скоро свяжемся с вами для уточнения деталей."
+    yandex:
+      connection_error: "Ошибка при подключении к Яндекс.Кассе"
+    order_mailer:
+      total: "Итого заказ"
+      subtotal: "Итого"
   next: "Следующий"
   previous: "Предыдущий"
   title: "Заголовок"

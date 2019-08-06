@@ -21,7 +21,9 @@ end
 
 Spree::Auth::Config[:confirmable] = true
 Spree::Config[:address_requires_state] = false
+Rails.application.config.spree.payment_methods << Spree::Gateway::Yandex
 
+Rails.application.config.spree.promotions.actions = [Spree::Promotion::Actions::CreateItemAdjustments]
 # Configure Spree Dependencies
 #
 # Note: If a dependency is set here it will NOT be stored within the cache & database upon initialization.

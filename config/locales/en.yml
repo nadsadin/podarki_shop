@@ -31,6 +31,8 @@
 
 en:
   spree:
+    yandex:
+      connection_error: "Error connecting to Yandex.Checkout"
     latest_products: "New Sales"
     reviews_count: "Total reviews:"
     taxons: "Shop Departments"

@@ -17,6 +17,9 @@ Spree::Core::Engine.routes.draw do
   %w( 404 422 500 ).each do |code|
     get code, :to => "errors#show", :code => code
   end
+  scope :yandex,  defaults: {format: 'json'} do
+    post :check_payment, :to => "yandex#check_payment"
+  end
   resources :oneclicks, only: [:create]
   namespace :admin do
     resources :slides do

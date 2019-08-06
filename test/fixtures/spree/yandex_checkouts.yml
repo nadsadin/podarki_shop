@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idempotence_key: MyString
+  confirmation_url: MyString
+  refundable: MyString
+  yandex_id: MyString
+  status: MyString
+  payment_id: 1
+
+two:
+  idempotence_key: MyString
+  confirmation_url: MyString
+  refundable: MyString
+  yandex_id: MyString
+  status: MyString
+  payment_id: 1

@@ -1,5 +1,7 @@
 zh-CN:
   spree:
+    yandex:
+      connection_error: "错误连接到 Yandex.支付"
     latest_products: "新品"
     password_confirmation: "确认密码"
     reviews_count: "总评论:"
@@ -21,8 +23,8 @@ zh-CN:
     minimum_password_length: "(最少6个字符)"
     required_fields: "必填字段"
     one_click_buy: "单击即可购买"
-    one_click_error: “发送请求失败”
-    one_click_success: “订单已成功发送。我们会尽快与您联系，澄清详细信息。”
+    one_click_error: 发送请求失败
+    one_click_success: 订单已成功发送。我们会尽快与您联系，澄清详细信息
     order_state:
       address: 地址
       awaiting_return: 等待回归
@@ -35,6 +37,9 @@ zh-CN:
       payment: 付款
       resumed: 恢复
       returned: 回
+    order_mailer:
+      total: "总订单"
+      subtotal: "在总"
   devise:
     user_registrations:
       spree_user:

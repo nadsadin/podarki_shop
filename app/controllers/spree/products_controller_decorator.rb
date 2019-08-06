@@ -21,7 +21,7 @@ module Spree
     end
 
     def default_sorting
-      :ascend_by_master_price
+      :descend_by_master_price
     end
 
     def allowed_sortings

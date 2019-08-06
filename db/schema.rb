@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_04_133314) do
+ActiveRecord::Schema.define(version: 2019_08_06_135944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -628,6 +628,8 @@ ActiveRecord::Schema.define(version: 2019_08_04_133314) do
     t.string "id_1c"
     t.boolean "is_hit"
     t.integer "favorite_users_count", default: 0
+    t.boolean "is_new"
+    t.boolean "is_handmade"
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["discontinue_on"], name: "index_spree_products_on_discontinue_on"

@@ -6,6 +6,9 @@
         el: '.swiper-pagination',
         clickable: true
       },
+      autoplay: {
+        delay: 5000,
+      },
     });
   });
 })(window, document, jQuery);

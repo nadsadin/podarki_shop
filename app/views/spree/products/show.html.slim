@@ -30,11 +30,12 @@
           span.product__badge-wrapper
             /.product__badge.red
               span скидка
-            - if @product.available_on>Date.current-3.month
+            - if @product.is_new?
               .product__badge.green
                 span новинка
-            /.product__badge.white
-              span hand made
+            - if @product.is_handmade?
+              .product__badge.white
+                span hand made
           span.img-thumbnail-overlay.bg-white.opacity-75
           span.img-thumbnail-content.text-primary.text-xlarge
             i.ion.ion-ios-search

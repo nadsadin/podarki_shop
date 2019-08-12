@@ -58,6 +58,7 @@ module Spree
       json_result = JSON.parse(result.body)
       if result.code == '200'
         if @order.update_from_params(params, permitted_checkout_attributes, request.headers.env) && @order.next
+          Spree::AdminOrderMailer.admin_email(@order).deliver_later if @order.completed?
           payment = @order.payments.first
           yandex = Spree::YandexCheckout.create(idempotence_key: idempotence_key, confirmation_url: json_result['confirmation']['confirmation_url'], refundable: json_result['refundable'], yandex_id: json_result['id'], status: json_result['status'], payment_id: payment.id)
           payment.started_processing

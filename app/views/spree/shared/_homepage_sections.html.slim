@@ -5,7 +5,7 @@
       = Spree.t(:taxons)
     .row.my-4
       - homepage_sections.each do |homepage_section|
-        .col-lg-4.col-md-6
+        .col-lg-4.col-md-6.mb-4
           = link_to seo_url(homepage_section.taxon), class: 'section-card'
             .section-card__body
               .section-card__title = homepage_section.taxon.name.capitalize

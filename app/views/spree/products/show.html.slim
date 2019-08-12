@@ -13,7 +13,7 @@
 - cache cache_key_for_product do
   .container
     h1 itemprop="name"
-      = @product.name
+      = raw @product.name
     = custom_breadcrumbs(@taxon)
     .row.mt-5.pb-3.product[data-hook="product_show" itemscope itemtype="https://schema.org/Product"]
       .col-md-6.text-center

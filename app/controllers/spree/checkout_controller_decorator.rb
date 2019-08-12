@@ -12,10 +12,10 @@ module Spree
         end
 
         if @order.completed?
-
           @current_order = nil
           flash.notice = Spree.t(:order_processed_successfully)
           flash['order_completed'] = true
+          Spree::AdminOrderMailer.admin_email(@order).deliver_later
           redirect_to completion_route && return
         else
           redirect_to checkout_state_path(@order.state)

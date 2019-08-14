@@ -54,9 +54,18 @@ en:
     by_feedback: "By feedback"
     minimum_password_length: "(6 characters minimum)"
     required_fields: "Required fields"
-    one_click_buy: "1-click buy"
+    one_click_buy: "Buy in one click"
     one_click_error: "Failed to send request"
     one_click_success: "The order has been successfully sent. We will contact you soon to clarify the details."
+    more_details: "More"
+    bestsellers: "Bestsellers"
+    ru: "Русский"
+    en: "English"
+    zh-cn: "中文"
+    email_hint: "Email address provided during registration"
+    password_hint: "Password specified during registration"
+    signin: "Sign in"
+    password_confiramtion: "Password Confirmation"
   devise:
     user_registrations:
       spree_user:

@@ -5,3 +5,5 @@ li.nav-item.dropdown
     - (SpreeI18n::Config.available_locales-[I18n.locale]).each do |locale|
       a.dropdown-item href=url_for(locale: locale)
         i class="icon-flag-#{locale.to_s.downcase}"
+        |&nbsp;
+        = Spree.t(locale.to_s.downcase)

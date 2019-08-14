@@ -8,6 +8,6 @@ fieldset#password-credentials
     = f.password_field :password, :class => 'form-control', :placeholder => Spree.t(:password)
     .small.form-text.text-muted = Spree.t(:minimum_password_length)
   .form-group
-    = f.label :password_confirmation, Spree.t(:password_confirmation), class: 'required', title: 'required'
+    = f.label :password_confirmation, class: 'required', title: 'required'
     = f.password_field :password_confirmation, :class => 'form-control', :placeholder => Spree.t(:confirm_password)
 div data-hook="signup_below_password_fields"

@@ -89,6 +89,7 @@ $color-on-red: darken(#fff, 20%);
   min-width: 20px;
   .dropdown-item{
     padding: 0.25rem 0.5rem;
+    display: flex;
   }
 }
 .no-wrap{

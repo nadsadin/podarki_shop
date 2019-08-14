@@ -9,6 +9,7 @@
           .swiper-slide__content.container
             .swiper-slide__title
               = slide.title
-            a.btn.btn-rounded.btn-white.btn-w220 href=slide.link  Подробнее
+            a.btn.btn-rounded.btn-white.btn-w220 href=slide.link
+              = Spree.t(:more_details)
     /! If we need pagination
     .swiper-pagination

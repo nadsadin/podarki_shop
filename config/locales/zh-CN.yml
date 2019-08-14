@@ -22,9 +22,15 @@ zh-CN:
     by_feedback: "按评价"
     minimum_password_length: "(最少6个字符)"
     required_fields: "必填字段"
-    one_click_buy: "单击即可购买"
+    one_click_buy: "壹鍵購買"
     one_click_error: 发送请求失败
     one_click_success: 订单已成功发送。我们会尽快与您联系，澄清详细信息
+    ru: "Русский"
+    en: "English"
+    zh-cn: "中文"
+    email_hint: "注册时提供的电子邮件地址"
+    password_hint: "注册时指定的密码"
+    signin: "登入"
     order_state:
       address: 地址
       awaiting_return: 等待回归
@@ -40,6 +46,11 @@ zh-CN:
     order_mailer:
       total: "总订单"
       subtotal: "在总"
+    more_details: "更多细节"
+    bestsellers: "熱賣品"
+    favorites: "喜歡"
+    cart: "購物車"
+    account: "個人賬戶"
   devise:
     user_registrations:
       spree_user:

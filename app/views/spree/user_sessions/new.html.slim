@@ -18,7 +18,7 @@
               /label.mdc-floating-label for="login"  Логин
             .mdc-notched-outline__trailing
         .mdc-text-field-helper-line
-          .mdc-text-field-helper-text.mdc-text-field-helper-text--persistent Логин, указанный при регистрации
+          .mdc-text-field-helper-text.mdc-text-field-helper-text--persistent = Spree.t(:email_hint)
       .text-field-container
         .mdc-text-field.mdc-text-field--outlined data-mdc-auto-init="MDCTextField"
           = f.password_field :password, class: 'mdc-text-field__input'
@@ -30,7 +30,7 @@
               /label.mdc-floating-label for="password"  Пароль
             .mdc-notched-outline__trailing
         .mdc-text-field-helper-line
-          .mdc-text-field-helper-text.mdc-text-field-helper-text--persistent Пароль, указанный при регистрации
+          .mdc-text-field-helper-text.mdc-text-field-helper-text--persistent  = Spree.t(:password_hint)
       = f.submit Spree.t(:signin), class: 'btn btn-primary btn-rounded btn-w220'
       /a.btn.btn-primary.btn-rounded.btn-w220 href="#"  Войти
     div data-hook="login_extras"

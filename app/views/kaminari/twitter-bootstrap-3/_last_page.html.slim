@@ -8,4 +8,4 @@
 - unless current_page.last?
   li.page-item.last.next
     - # "next" class present for border styling in twitter bootstrap
-    = link_to_unless current_page.last?, raw(t 'views.pagination.last'), url, {remote: remote, class: "page-link"}
+    = link_to_unless current_page.last?, raw("»"), url, {remote: remote, class: "page-link"}

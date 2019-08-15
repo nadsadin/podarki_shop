@@ -32,10 +32,10 @@
               span скидка
             - if @product.is_new?
               .product__badge.green
-                span новинка
+                span = Spree.t(:new)
             - if @product.is_handmade?
               .product__badge.white
-                span hand made
+                span = Spree.t(:handmade)
           span.img-thumbnail-overlay.bg-white.opacity-75
           span.img-thumbnail-content.text-primary.text-xlarge
             i.ion.ion-ios-search

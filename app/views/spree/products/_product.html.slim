@@ -5,10 +5,10 @@
       .product-card__badge-wrapper
         /.product-card__badge.red скидка
         - if product.is_new?
-          .product-card__badge.green новинка
+          .product-card__badge.green = Spree.t(:new)
         - if product.is_handmade?
           .product-card__badge.white
-            span hand made
+            span = Spree.t(:handmade)
       = product_image(product, itemprop: "image", class: "product-card__image")
     .product-card__body
       .product-card__title.my-2 itemprop="name" title=product.name

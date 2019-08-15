@@ -75,6 +75,8 @@ ru:
     zh-cn: "中文"
     email_hint: "Email, указанный при регистрации"
     password_hint: "Пароль, указанный при регистрации"
+    new: "новинка"
+    handmade: "hand made"
   next: "Следующий"
   previous: "Предыдущий"
   title: "Заголовок"

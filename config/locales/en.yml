@@ -66,6 +66,8 @@ en:
     password_hint: "Password specified during registration"
     signin: "Sign in"
     password_confiramtion: "Password Confirmation"
+    new: "new"
+    handmade: "hand made"
   devise:
     user_registrations:
       spree_user:

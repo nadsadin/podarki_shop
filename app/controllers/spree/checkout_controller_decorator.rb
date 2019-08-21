@@ -79,7 +79,6 @@ module Spree
     def line_item(item)
       {
           description: item.product.name,
-          product_code: item.variant.sku,
           quantity: '%.2f'%item.quantity,
           amount: {
               currency: item.order.currency,

@@ -53,6 +53,14 @@ zh-CN:
     favorites: "喜歡"
     cart: "購物車"
     account: "個人賬戶"
+    footer_company: "Eco Hotel"
+    footer_design: "Design and support - ADS Agency"
+    coupon_code_apply: "使用折扣码"
+    you_have_no_favorite_products_yet: "您还没有添加物品到购物车"
+    product_image: "产品形象"
+    product_name: "产品名称"
+    my_favorite_products: "喜歡"
+    credit_balance: "你的平衡"
   devise:
     user_registrations:
       spree_user:

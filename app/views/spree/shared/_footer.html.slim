@@ -13,7 +13,8 @@
         = link_to Spree.t('favorites'), favorite_products_path, class: 'footer-link '
         = render partial: 'spree/static_content/static_content_list', collection: Spree::Page.by_store(current_store).visible.footer_links, as: :page
       .text-center.text-muted.small
-        | © kitchai.ru,
+        = Spree.t(:footer_company)
+        |,
         =< Date.current.strftime("%Y")
       .text-center.text-muted.small
-        | Дизайн и поддержка сайта - Агентство ADS
+        = Spree.t(:footer_design)

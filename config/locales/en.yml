@@ -68,6 +68,10 @@ en:
     password_confiramtion: "Password Confirmation"
     new: "new"
     handmade: "hand made"
+    footer_company: "Eco Hotel"
+    footer_design: "Design and support - ADS Agency"
+    coupon_code_apply: "Apply discount code"
+    you_have_no_favorite_products_yet: "You have not added goods"
   devise:
     user_registrations:
       spree_user:

@@ -38,6 +38,8 @@ en:
     taxons: "Shop Departments"
     back_to_home: "Back to home"
     promotion_label: 'Promotion (%{name})'
+    product:
+      payment: "Payment method"
     favorite_products:
       destroy:
         success: 'Successfully removed favorite product from your list'

@@ -10,7 +10,8 @@
             .section-card__body
               .section-card__title = homepage_section.taxon.name.capitalize
               .section-card__description
-                => Spree.t(:from)
+                => Spree.t(:from) unless locale == :"zh-CN"
                 => homepage_section.min_price
                 | ₽
+                = "起" if locale == :"zh-CN"
             = image_tag image_path(main_app.url_for(homepage_section.image)), class: "section-card__image", alt: ""

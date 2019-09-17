@@ -4,8 +4,9 @@ zh-CN:
       connection_error: "错误连接到 Yandex.支付"
     latest_products: "新品"
     password_confirmation: "确认密码"
-    reviews_count: "总评论:"
-    taxons: "商店各区域"
+    reviews_count: "評價:"
+    reviews: "評價"
+    taxons: "商店各區域"
     bestsellers: "最畅销"
     back_to_home: "回到主页"
     error_description:
@@ -14,12 +15,12 @@ zh-CN:
       422: "您无权访问此页面"
     similar_products: "类似的商品"
     promotion_label: '提升 %{name}'
-    lowest_price: "价格从低到高"
-    highest_price: "价格从高到低"
+    lowest_price: "價格從高到低"
+    highest_price: "價格從低到高"
     alphabeticaly: "按字母"
-    popular_first: "热门第一"
+    popular_first: "熱門第壹"
     sort_by: "排序方式"
-    by_feedback: "按评价"
+    by_feedback: "按評價"
     minimum_password_length: "(最少6个字符)"
     required_fields: "必填字段"
     one_click_buy: "壹鍵購買"
@@ -33,6 +34,8 @@ zh-CN:
     signin: "登入"
     new: "新品"
     handmade: "手工制作"
+    product:
+      payment: "支付方式"
     order_state:
       address: 地址
       awaiting_return: 等待回归
@@ -48,7 +51,7 @@ zh-CN:
     order_mailer:
       total: "总订单"
       subtotal: "在总"
-    more_details: "更多细节"
+    more_details: "更多細節"
     bestsellers: "熱賣品"
     favorites: "喜歡"
     cart: "購物車"

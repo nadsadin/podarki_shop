@@ -2,7 +2,7 @@
   "name": "podarki_shop",
   "private": true,
   "dependencies": {
-    "@claviska/jquery-minicolors": "~2.2.6",
+    "@claviska/jquery-minicolors": "~2.3.6",
     "animate.css": "~3.6.1",
     "blueimp-gallery": "~2.33.0",
     "bootstrap": "^4.3.1",
